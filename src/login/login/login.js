@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import {SafeAreaView, Text, useColorScheme, View} from 'react-native';
 
-import login from 
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
+const Loginf = () => {
+  const isDarkMode = useColorScheme() === 'dark';
+  const [first, setfirst] = useState()
 
-return (
+  const backgroundStyle = {
+    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  };
 
-)
-export default login;
+  return (
+    <SafeAreaView style={backgroundStyle}>
+      <View>
+        <Text>App</Text>
+      </View>
+    </SafeAreaView>
+  );
+};
+
+export default Login;
