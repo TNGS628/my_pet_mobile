@@ -29,12 +29,6 @@ module.exports = api => {
         },
       },
     ],
-    [
-      'react-native-reanimated/plugin',
-      {
-        globals: ['__scanCodes'],
-      },
-    ],
   ];
   //change to 'production' to check if this is working in 'development' mode
   if (babelEnv !== 'development') {

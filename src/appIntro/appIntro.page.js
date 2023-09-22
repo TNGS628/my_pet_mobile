@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, View, useWindowDimensions } from 'react-native';
+import { TouchableOpacity, View, useWindowDimensions, Text } from 'react-native';
 import { TabView, SceneMap } from 'react-native-tab-view';
 
 import { AppIntroContainer } from './components';
@@ -56,7 +56,10 @@ const AppIntroPage = () => {
               onPress={() => {
                 setIndex(2);
               }}>
-              Алгасах
+                <Text>
+                Алгасах
+                </Text>
+              
             </TouchableOpacity>
             {/* <View style={styles.appIntroDotContainer}>
               {props.navigationState.routes.map((route: any, i: number) => {
@@ -71,7 +74,10 @@ const AppIntroPage = () => {
               onPress={() => {
                 setIndex(index + 1);
               }}>
-              Дараах
+                <Text>
+                Дараах
+                </Text>
+              
             </TouchableOpacity>
           </>
         ) : (
