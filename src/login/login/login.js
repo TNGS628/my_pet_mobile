@@ -1,3 +1,5 @@
+import Card from '@components';
+import TextComp from '@components';
 import React, { useState } from 'react';
 import {SafeAreaView, Text, useColorScheme, View} from 'react-native';
 
@@ -16,6 +18,8 @@ const Loginf = () => {
       <View>
         <Text>App</Text>
       </View>
+      <TextComp text={"DSD"} style={{fontSize: 10}} />
+      <Card/>
     </SafeAreaView>
   );
 };
