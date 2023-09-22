@@ -4,6 +4,7 @@ import {SafeAreaView, Text, useColorScheme, View} from 'react-native';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import { TextComp } from '@/components';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -24,7 +25,8 @@ const App = () => {
     <NavigationContainer theme={MyTheme}>
       <SafeAreaView style={backgroundStyle}>
         {/* <AppIntroPage /> */}
-        <Text>HSD</Text>
+        {/* <Text>HSD</Text> */}
+        <TextComp text={"HIEHEHEH"} />
       </SafeAreaView>
     </NavigationContainer>
 
