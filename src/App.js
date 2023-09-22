@@ -23,7 +23,8 @@ const App = () => {
   return (
     <NavigationContainer theme={MyTheme}>
       <SafeAreaView style={backgroundStyle}>
-        <AppIntroPage />
+        {/* <AppIntroPage /> */}
+        <Text>HSD</Text>
       </SafeAreaView>
     </NavigationContainer>
 
