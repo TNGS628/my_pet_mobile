@@ -1,6 +1,7 @@
 import AppIntroPage from './appIntro/appIntro.page';
 import React from 'react';
 import {SafeAreaView, Text, useColorScheme, View} from 'react-native';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
@@ -11,10 +12,21 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const MyTheme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      primary: 'rgb(255, 45, 85)',
+    },
+  };
+
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <AppIntroPage />
-    </SafeAreaView>
+    <NavigationContainer theme={MyTheme}>
+      <SafeAreaView style={backgroundStyle}>
+        <AppIntroPage />
+      </SafeAreaView>
+    </NavigationContainer>
+
   );
 };
 
