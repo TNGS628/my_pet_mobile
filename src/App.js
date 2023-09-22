@@ -26,7 +26,8 @@ const App = () => {
       <SafeAreaView style={backgroundStyle}>
         {/* <AppIntroPage /> */}
         {/* <Text>HSD</Text> */}
-        <TextComp text={"HIEHEHEH"} />
+        {/* <TextComp text={"HIEHEHEH"} /> */}
+        <Tips />
       </SafeAreaView>
     </NavigationContainer>
 
