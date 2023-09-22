@@ -1,10 +1,11 @@
 import AppIntroPage from './appIntro/appIntro.page';
 import React from 'react';
-import {SafeAreaView, Text, useColorScheme, View} from 'react-native';
+import {Image, SafeAreaView, Text, useColorScheme, View} from 'react-native';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import { TextComp } from '@/components';
+import images from './theme/variables';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -27,6 +28,7 @@ const App = () => {
         {/* <AppIntroPage /> */}
         {/* <Text>HSD</Text> */}
         <TextComp text={"HIEHEHEH"} />
+        {/* <Image source={images.logo} /> */}
       </SafeAreaView>
     </NavigationContainer>
 
