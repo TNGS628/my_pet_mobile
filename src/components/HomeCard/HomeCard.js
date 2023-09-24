@@ -1,4 +1,4 @@
-import TextComp from '@components';
+import {TextComp} from '@/components';
 import React from 'react';
 import { Text, View } from 'react-native';
 
