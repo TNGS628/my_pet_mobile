@@ -1,5 +1,4 @@
-import Card from '@components';
-import TextComp from '@components';
+import {TextComp} from '@/components';
 import React, { useState } from 'react';
 import {SafeAreaView, Text, useColorScheme, View} from 'react-native';
 import { useTheme } from '@react-navigation/native';
@@ -23,8 +22,7 @@ const Login = () => {
       <View>
         <Text style={{color: colors.primary}}>App</Text>
       </View>
-      <TextComp text={"DSD"} style={{fontSize: 10}} />
-      <Card/>
+      <TextComp text="DSD" style={{fontSize: 10}} />
     </SafeAreaView>
   );
 };
