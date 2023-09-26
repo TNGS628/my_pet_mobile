@@ -1,12 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import { TabView } from "react-native-tab-view";
 import { TouchableOpacity } from "react-native";
 
 //tip screens
-import Tips1 from "./screens/tips/Tips1";
-import Tips2 from "./screens/tips/Tips2";
-import Tips3 from "./screens/tips/Tips3";
-import Tips4 from "./screens/tips/Tips4";
+import Tips1 from "./Tips1";
+import Tips2 from "./Tips2";
+import Tips4 from "./Tips4";
+import Tips3 from "./Tips3";
 
 const AppIntroPage = () => {
     const [index, setIndex] = useState(0);
@@ -81,7 +81,6 @@ const AppIntroPage = () => {
                   renderScene={renderScene}
                   onIndexChange={setIndex}
                   renderTabBar={renderTabBar}
-                  style={styles.mainContainer}
                   initialLayout={{ width: layout.width }}
                 />
               );      
