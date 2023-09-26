@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { AppIntroContainer } from 'src/appIntro/components';
+import AppIntroPage from 'src/screens/tips/Appintro';
 
 const AppIntroStack = createNativeStackNavigator();
 
@@ -10,7 +10,7 @@ const AppIntroNavigator = () => {
     <AppIntroStack.Navigator initialRouteName="AppIntroPage">
       <AppIntroStack.Screen
         name="AppIntroPage"
-        component={AppIntroContainer}
+        component={AppIntroPage}
         options={{
           headerShown: false,
         }}

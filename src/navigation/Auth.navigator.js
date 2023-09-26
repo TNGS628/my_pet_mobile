@@ -2,7 +2,7 @@ import React from 'react';
 import {
   createStackNavigator,
 } from '@react-navigation/stack';
-import Login from 'src/login/login/login';
+import AppIntroPage from 'src/screens/tips/Appintro';
 
 
 const AuthStack = createStackNavigator();
@@ -14,7 +14,7 @@ const AuthNavigator = () => {
       screenOptions={{ presentation: 'card' }}>
       <AuthStack.Screen
         name="LoginPage"
-        component={Login}
+        component={AppIntroPage}
         options={{
           headerShown: false,
         }}
