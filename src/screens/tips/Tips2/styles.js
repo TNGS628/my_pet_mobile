@@ -34,5 +34,11 @@ export default StyleSheet.create({
     },
     conButtonStyle: {
         top: '90%'
-    }
+    },
+    skipButton: {
+        position: 'absolute' ,
+        top: 35,
+        right: 4,
+        zIndex: 99999
+      },
 });

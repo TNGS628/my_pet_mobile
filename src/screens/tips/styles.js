@@ -1,13 +1,8 @@
 import { StyleSheet } from 'react-native';
-import {Calculator} from '@/utils/calculator';
 
 export default StyleSheet.create({
-    welcome: {
-        fontSize: 24,
-        color: '#ABCC36',
-        fontWeight: 'bold',
-        fontStyle: 'italic'
-        
+    headContainer: {
+        top: 100
     },
     textContainer: {
         justifyContent: 'center',
@@ -38,10 +33,28 @@ export default StyleSheet.create({
     conButtonStyle: {
         top: '90%'
     },
-    skipButton: {
-        position: 'absolute',
-        top: 35,
-        flex: 1,
-        right: 4,
-      }
+    appIntroSliderDotSelected: {
+        backgroundColor: "black",
+      },
+      appIntroSliderDot: {
+        height: 8,
+        width: 8,
+        borderRadius: 4,
+        backgroundColor: "#DEDEDE",
+        marginHorizontal: 4,
+      },
+      appIntroDotContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 0,
+        paddingBottom: 20
+      },
+      appIntroSliderContainer: {
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        padding: 25,
+        paddingVertical: 35,
+      },
+      
 });

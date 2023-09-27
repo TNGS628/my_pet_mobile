@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {SafeAreaView, useColorScheme, View, Image} from 'react-native';
+import {SafeAreaView, useColorScheme, View, Image,TouchableOpacity} from 'react-native';
 import { useTheme } from '@react-navigation/native';
 
 //components
@@ -9,15 +9,19 @@ import { ConButton }  from '@/components'
 import images from '../../../theme/variables'
 
 
-const Tips = () => {
-  const { colors } = useTheme();
+function Tips ({navigation}){
+const handleNavigateLogin = () => navigation.navigate('Login');
 
-  const isDarkMode = useColorScheme() === 'dark';
-  const [first, setfirst] = useState()
+const isDarkMode = useColorScheme() === 'dark';
+const [first, setfirst] = useState()
   
 
   return (
     <SafeAreaView style={styles.headContainer}>
+      <TouchableOpacity onPress={handleNavigateLogin}
+      style={styles.skipButton}>
+        <TextComp text="Алгасах" />
+      </TouchableOpacity>
       <View style={styles.picContainer}>
       <Image source={images.tips2}/>
       </View>
@@ -25,8 +29,8 @@ const Tips = () => {
         <TextComp text={'Та мал эмнэлэгийн байршил, мэргэжлийн эмчийн онош, зөвлөгөө зэргийг цахимаар авах боломжтой.'} style={styles.secondText}/>
       </View>
       <View style={styles.buttonContainer}> 
-      <ConButton text={'Үргэлжлүүлэх'}/>
       </View>
+      
     </SafeAreaView>
   );
 };

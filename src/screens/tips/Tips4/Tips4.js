@@ -24,14 +24,7 @@ const Tips = () => {
       <View style={styles.secondTextContainer}>
         <TextComp text={'Гэр бүлийн нэгэн гишүүнийхээ төлөө энэхүү аялалыг эхлүүлэхэд бэлэн үү?'} style={styles.secondText}/>
       </View>
-      {/* <View style={styles.appIntroDotContainer}>
-              {props.navigationState.routes.map((route: any, i: number) => {
-                
-                return <View style={dotStyle(index)} />;
-              })}
-            </View> */}
       <View style={styles.buttonContainer}> 
-      <ConButton text={'Үргэлжлүүлэх'}/>
       </View>
     </SafeAreaView>
   );

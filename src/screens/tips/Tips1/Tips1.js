@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {SafeAreaView, useColorScheme, View, Image} from 'react-native';
+import {SafeAreaView, useColorScheme, View, Image, TouchableOpacity} from 'react-native';
 import { useTheme } from '@react-navigation/native';
 
 //components
@@ -18,6 +18,9 @@ const Tips = () => {
 
   return (
     <SafeAreaView>
+       <TouchableOpacity style={styles.skipButton}>
+            <TextComp text="Алгасах" />
+          </TouchableOpacity>
       <View style={styles.textContainer}>
         <TextComp text={'Тавтай морилно уу?'} style={styles.welcome} />
       </View>
@@ -27,14 +30,7 @@ const Tips = () => {
       <View style={styles.secondTextContainer}>
         <TextComp text={'Тэжээвэр амьтанд тань зориулсан хамгийн сайн туслах'} style={styles.secondText}/>
       </View>
-      {/* <View style={styles.appIntroDotContainer}>
-              {props.navigationState.routes.map((route: any, i: number) => {
-                
-                return <View style={dotStyle(index)} />;
-              })}
-            </View> */}
       <View style={styles.buttonContainer}> 
-      <ConButton text={'Үргэлжлүүлэх'}/>
       </View>
     </SafeAreaView>
   );
