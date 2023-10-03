@@ -6,6 +6,7 @@ import { TabHomeNavigator } from './MainNavigators/Tab.home.navigator';
 import { useStore } from 'src/context/app.provider';
 import { APP_STACK } from './screenTypes';
 import SplashPage from 'src/screens/splashScreen/splash.page';
+import information from 'src/screens/information/information'
 
 const RootStack = createNativeStackNavigator();
 
