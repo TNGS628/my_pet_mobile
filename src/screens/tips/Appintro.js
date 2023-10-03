@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TabView, SceneMap } from 'react-native-tab-view';
 import { TouchableOpacity, View } from 'react-native';
-import { useTheme } from '@react-navigation/native';
+import { NavigationContainer, useTheme } from '@react-navigation/native';
 import { TextComp } from '@/components';
 
 //styles
@@ -62,15 +62,6 @@ const AppIntroPage = () => {
     return (
       <View style={styles.appIntroSliderContainer}>
         <>
-          {/* <View>
-          <TouchableOpacity zIndex={1} onPress={() => {
-            setIndex(3);
-          } }>
-            <TextComp text='Algasah'  />
-          </TouchableOpacity>
-        </View> */}
-         
-
           <View style={styles.appIntroDotContainer}>
             {props.navigationState.routes.map((route, i) => {
               const dotStyle = idx => [
@@ -100,46 +91,9 @@ const AppIntroPage = () => {
             }}
             text={index !== 3 ? 'Үргэлжлүүлэх' : ' Эхлэх'}
           />
-          {/* </LinearGradient> */}
         </>
       </View>
     );
-    //   return (
-    //     <View style={styles.appIntroSliderContainer}>
-    //       {index !== 2 ? (
-    //         <>
-    //           <TouchableOpacity
-    //             variant="text"
-    //             p={0}
-    //             _text={{
-    //               color: colors.grayColor,
-    //             }}
-    //             zIndex={1}
-    //             onPress={() => {
-    //               setIndex(2);
-    //             }}>
-    //               <TextComp text='Алгасах'/>
-
-    //           </TouchableOpacity>
-    //           <View style={styles.appIntroDotContainer}>
-    //             {props.navigationState.routes.map((route: any, i: number) => {
-    //               const dotStyle = (idx: any) => [
-    //                 styles.appIntroSliderDot,
-    //                 idx === i && styles.appIntroSliderDotSelected,
-    //               ];
-    //               return <View style={dotStyle(index)} />;
-    //             })}
-    //           </View>
-    //         </>
-    //       ) : (
-    //         <TouchableOpacity flex={1} bg={colors.success[500]} onPress={() => onSuccess()}>
-    //           <TextComp text='Эхэлцгээе!'/>
-
-    //         </TouchableOpacity>
-    //       )}
-    //     </View>
-    //   );
-    // };
   };
   return (
     <TabView

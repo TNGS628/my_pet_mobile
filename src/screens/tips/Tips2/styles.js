@@ -36,9 +36,13 @@ export default StyleSheet.create({
         top: '90%'
     },
     skipButton: {
-        position: 'absolute' ,
-        top: 35,
-        right: 4,
-        zIndex: 99999
+        position: 'absolute',
+        right: 23,
+        bottom: 400,
       },
+    backButton: {
+        position: 'absolute',
+        left: 23,
+        top: -45
+    }
 });

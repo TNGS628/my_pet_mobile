@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import {SafeAreaView, useColorScheme, View, Image,TouchableOpacity} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 import { useTheme } from '@react-navigation/native';
 
 //components
@@ -9,8 +11,11 @@ import { ConButton }  from '@/components'
 import images from '../../../theme/variables'
 
 
-function Tips ({navigation}){
-const handleNavigateLogin = () => navigation.navigate('Login');
+
+const handleBackPress = () => useNavigation.navigate('AppIntroPage');
+
+function Tips ({ navigation }){
+  const { colors } = useTheme();
 
 const isDarkMode = useColorScheme() === 'dark';
 const [first, setfirst] = useState()
@@ -18,8 +23,10 @@ const [first, setfirst] = useState()
 
   return (
     <SafeAreaView style={styles.headContainer}>
-      <TouchableOpacity onPress={handleNavigateLogin}
-      style={styles.skipButton}>
+      <TouchableOpacity onPress={handleBackPress}>
+        <Image source={images.back} style={styles.backButton} />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('AuthNavigator')} style={styles.skipButton}>
         <TextComp text="Алгасах" />
       </TouchableOpacity>
       <View style={styles.picContainer}>

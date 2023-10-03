@@ -40,8 +40,11 @@ export default StyleSheet.create({
     },
     skipButton: {
         position: 'absolute',
-        top: 35,
-        flex: 1,
-        right: 4,
-      }
+        right: 23,
+        bottom: 360,
+      },
+    backButton: {
+        position: 'absolute',
+        left: 23
+    }
 });

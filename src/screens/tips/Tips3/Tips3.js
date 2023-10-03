@@ -18,6 +18,9 @@ const Tips = () => {
 
   return (
     <SafeAreaView style={styles.headContainer}>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Image source={images.back} style={styles.backButton} />
+      </TouchableOpacity>
       <TouchableOpacity style={styles.skipButton}>
             <TextComp text="Алгасах" />
       </TouchableOpacity>

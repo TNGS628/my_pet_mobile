@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {SafeAreaView, useColorScheme, View, Image} from 'react-native';
+import {SafeAreaView, useColorScheme, View, Image, TouchableOpacity} from 'react-native';
 import { useTheme } from '@react-navigation/native';
 
 //components
@@ -18,6 +18,9 @@ const Tips = () => {
 
   return (
     <SafeAreaView style={styles.headContainer}>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Image source={images.back} style={styles.backButton} />
+      </TouchableOpacity>
       <View style={styles.picContainer}>
       <Image source={images.tips4}/>
       </View>
