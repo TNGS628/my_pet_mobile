@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     fontSize: 40,
     fontFamily: 'kopub batang',
     color: 'rgb(70,171,205)',
-    marginTop: 150,
+    // marginTop: 150,
   },
   pet: {
     fontSize: 40,
@@ -28,9 +28,14 @@ export const styles = StyleSheet.create({
     marginTop: 30,
     height: 60,
     width: 60,
-    marginTop: 150,
+    marginTop: 50,
   },
   forgetpasswordcontainer: {
     alignItems: 'center',
+  },
+
+  registercontainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

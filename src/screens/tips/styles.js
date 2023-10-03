@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import {Calculator} from '@/utils/calculator';
 
 export default StyleSheet.create({
     headContainer: {
@@ -15,17 +14,16 @@ export default StyleSheet.create({
         fontWeight: '500',
         fontStyle: 'bold',
         fontFamily: 'Roboto',
-        color: '#808080',
-        width: '80%'
+        color: '#808080'
     },
     secondTextContainer: {
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 30
-        
     },
     picContainer: {
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 20
     },
     buttonContainer: {
         justifyContent: 'center',
@@ -35,14 +33,28 @@ export default StyleSheet.create({
     conButtonStyle: {
         top: '90%'
     },
-    skipButton: {
-        position: 'absolute',
-        right: 23,
-        bottom: 400,
+    appIntroSliderDotSelected: {
+        backgroundColor: "black",
       },
-    backButton: {
-        position: 'absolute',
-        left: 23,
-        top: -45
-    }
+      appIntroSliderDot: {
+        height: 8,
+        width: 8,
+        borderRadius: 4,
+        backgroundColor: "#DEDEDE",
+        marginHorizontal: 4,
+      },
+      appIntroDotContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 0,
+        paddingBottom: 20
+      },
+      appIntroSliderContainer: {
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        padding: 25,
+        paddingVertical: 35,
+      },
+      
 });

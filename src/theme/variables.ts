@@ -4,6 +4,7 @@ const images = {
   tips2: require('./../assets/images/tips2.png'),
   tips3: require('./../assets/images/tips3.png'),
   tips4: require('./../assets/images/tips4.png'),
+  back: require('./../assets/images/backArrow.png'),
 };
 
 export default images;
