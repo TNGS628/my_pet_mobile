@@ -14,6 +14,7 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { styles } from './styles';
 import { TextInputComp } from '@/components';
 import images from 'src/theme/variables';
+import { ConButton } from '@/components';
 
 const Register = ({ navigation }) => {
   const { colors } = useTheme();
@@ -27,32 +28,33 @@ const Register = ({ navigation }) => {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <TextComp text="REGISTER" style={styles.my} />
-      <TouchableOpacity
-        style={styles.forgetpasswordcontainer}
-        onPress={() => navigation.goBack()}>
-        <TextComp text="Butsah" style={styles.forget_password} />
-      </TouchableOpacity>
-
       <View style={styles.container}>
-        <View style={styles.headlogos}>
-          <Image style={styles.headlogos} source={images.logo} />
-        </View>
-        <TextComp text="My" style={styles.my} />
-        <TextComp text="Pet" style={styles.pet} />
-      </View>
-      <TextInputComp placeholder="Нэвтрэх нэр"></TextInputComp>
-      <TextInputComp
-        placeholder="Нууц үг"
-        style={styles.container}></TextInputComp>
-      <View>
-        <TouchableOpacity style={styles.forgetpasswordcontainer}>
-          <TextComp
-            text="Нууц үгээ мартсан уу?"
-            style={styles.forget_password}
-          />
+        <TouchableOpacity
+          style={styles.leftarrow}
+          onPress={() => navigation.goBack()}>
+          <Image style={styles.headlogos} source={images.larrow} />
         </TouchableOpacity>
+        <TextComp text="Тавтай морилно уу" style={styles.welcome} />
+
+        <View>
+          <TextComp text="Таны нэр хэн бэ ?" style={styles.alltext} />
+          <TextInputComp style={styles.input}></TextInputComp>
+        </View>
+
+        <View>
+          <TextComp text="И-Мейл хаягаа оруулна уу." style={styles.alltext} />
+        </View>
+        <TextInputComp></TextInputComp>
+        <View>
+          <TextComp text="Нууц үгээ оруулна уу." style={styles.alltext} />
+          <TextInputComp></TextInputComp>
+        </View>
+        <View>
+          <TextComp text="Нууц үгээ дахин оруулна уу." style={styles.alltext} />
+          <TextInputComp style={styles.haha}></TextInputComp>
+        </View>
       </View>
+      <ConButton backgroundColor="black" text="asaassa"></ConButton>
     </SafeAreaView>
   );
 };
