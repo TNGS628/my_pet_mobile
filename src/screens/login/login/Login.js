@@ -55,10 +55,8 @@ const Login = ({ navigation }) => {
             />
           </TouchableOpacity>
           <View style={styles.registercontainer}>
-            <ConButton
-              backgroundColor="pink"
-              text="Нэвтрэх"
-              style={{ marginBottom: 150 }}></ConButton>
+            <ConButton backgroundColor="pink" text="Нэвтрэх"></ConButton>
+
             <ConButton
               onPress={() => navigation.navigate('RegisterPage')}
               backgroundColor="orange"

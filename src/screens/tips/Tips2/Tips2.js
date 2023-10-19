@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import {SafeAreaView, useColorScheme, View, Image} from 'react-native';
+import {SafeAreaView, useColorScheme, View, Image,TouchableOpacity} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 import { useTheme } from '@react-navigation/native';
 
 //components
@@ -9,15 +11,24 @@ import { ConButton }  from '@/components'
 import images from '../../../theme/variables'
 
 
-const Tips = () => {
+
+const handleBackPress = () => useNavigation.navigate('AppIntroPage');
+
+function Tips ({ navigation }){
   const { colors } = useTheme();
 
-  const isDarkMode = useColorScheme() === 'dark';
-  const [first, setfirst] = useState()
+const isDarkMode = useColorScheme() === 'dark';
+const [first, setfirst] = useState()
   
 
   return (
     <SafeAreaView style={styles.headContainer}>
+      <TouchableOpacity onPress={handleBackPress}>
+        <Image source={images.back} style={styles.backButton} />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('AuthNavigator')} style={styles.skipButton}>
+        <TextComp text="Алгасах" />
+      </TouchableOpacity>
       <View style={styles.picContainer}>
       <Image source={images.tips2}/>
       </View>
@@ -25,8 +36,8 @@ const Tips = () => {
         <TextComp text={'Та мал эмнэлэгийн байршил, мэргэжлийн эмчийн онош, зөвлөгөө зэргийг цахимаар авах боломжтой.'} style={styles.secondText}/>
       </View>
       <View style={styles.buttonContainer}> 
-      <ConButton text={'Үргэлжлүүлэх'}/>
       </View>
+      
     </SafeAreaView>
   );
 };

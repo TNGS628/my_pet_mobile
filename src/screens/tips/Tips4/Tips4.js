@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {SafeAreaView, useColorScheme, View, Image} from 'react-native';
+import {SafeAreaView, useColorScheme, View, Image, TouchableOpacity} from 'react-native';
 import { useTheme } from '@react-navigation/native';
 
 //components
@@ -18,20 +18,16 @@ const Tips = () => {
 
   return (
     <SafeAreaView style={styles.headContainer}>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Image source={images.back} style={styles.backButton} />
+      </TouchableOpacity>
       <View style={styles.picContainer}>
       <Image source={images.tips4}/>
       </View>
       <View style={styles.secondTextContainer}>
         <TextComp text={'Гэр бүлийн нэгэн гишүүнийхээ төлөө энэхүү аялалыг эхлүүлэхэд бэлэн үү?'} style={styles.secondText}/>
       </View>
-      {/* <View style={styles.appIntroDotContainer}>
-              {props.navigationState.routes.map((route: any, i: number) => {
-                
-                return <View style={dotStyle(index)} />;
-              })}
-            </View> */}
       <View style={styles.buttonContainer}> 
-      <ConButton text={'Үргэлжлүүлэх'}/>
       </View>
     </SafeAreaView>
   );

@@ -33,5 +33,15 @@ export default StyleSheet.create({
     },
     conButtonStyle: {
         top: '90%'
+    },
+    skipButton: {
+        position: 'absolute',
+        right: 23,
+        bottom: 400,
+      },
+    backButton: {
+        position: 'absolute',
+        left: 23,
+        top: -45
     }
 });
