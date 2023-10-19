@@ -11,6 +11,13 @@ const images = {
   menu: require('./../assets/images/iconmenu.png'),
   info: require('./../assets/images/compimage.png'),
   rarrow: require('./../assets/images/rightarrow.png'),
+  cat: require('./../assets/images/cat.png'),
+  dog: require('./../assets/images/dog.png'),
+  profile: require('./../assets/images/profile.png'),
+  instagram: require('./../assets/images/instagram.png'),
+  facebook: require('./../assets/images/facebook.png'),
+  twitter: require('./../assets/images/twitter.png'),
+  star: require('./../assets/images/star.png'),
 };
 
 export default images;

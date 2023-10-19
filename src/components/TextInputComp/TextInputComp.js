@@ -7,6 +7,8 @@ const TextInputComp = ({ text = '', placeholder = '' }) => {
     <TextInput
       placeholder={placeholder}
       style={styles.textinput}
+      multiline={true}
+      numberOfLines={5}
       // value={text}
     />
   );

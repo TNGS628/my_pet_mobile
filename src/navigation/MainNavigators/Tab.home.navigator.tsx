@@ -5,6 +5,8 @@ import { HomeNavigator } from './homeNavigator/Home.navigator';
 import { InfoNavigator } from './homeNavigator/Info.navigator';
 import { LocationNavigator } from './homeNavigator/Location.navigator';
 import { ProfileNavigator } from './homeNavigator/Profile.navigator';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import { View } from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,6 +27,7 @@ export const TabHomeNavigator = () => {
         tabBarStyle: [
           {
             display: getTabBarVisible(route),
+            paddingBottom: 5,
           },
         ],
       })}>
@@ -33,39 +36,39 @@ export const TabHomeNavigator = () => {
         component={HomeNavigator}
         options={() => ({
           title: 'Нүүр',
-          // tabBarIcon: ({ focused }) => (
-          //   <TabBar icon="home" focused={focused} />
-          // ),
+          tabBarIcon: ({ color }) => (
+            <Icon name="home" size={16} color={color} />
+          ),
         })}
       />
       <Tab.Screen
         name="InfoNavigator"
         component={InfoNavigator}
         options={() => ({
-          title: 'Info',
-          // tabBarIcon: ({ focused }) => (
-          //   <TabBar icon="home" focused={focused} />
-          // ),
+          title: 'Mэдээлэл',
+          tabBarIcon: ({ color }) => (
+            <Icon name="paw" size={16} color={color} />
+          ),
         })}
       />
       <Tab.Screen
         name="LocationNavigator"
         component={LocationNavigator}
         options={() => ({
-          title: 'Location',
-          // tabBarIcon: ({ focused }) => (
-          //   <TabBar icon="home" focused={focused} />
-          // ),
+          title: 'Байршил',
+          tabBarIcon: ({ color }) => (
+            <Icon name="map" size={16} color={color} />
+          ),
         })}
       />
       <Tab.Screen
         name="ProfileNavigator"
         component={ProfileNavigator}
         options={() => ({
-          title: 'Profile',
-          // tabBarIcon: ({ focused }) => (
-          //   <TabBar icon="home" focused={focused} />
-          // ),
+          title: 'Профайл',
+          tabBarIcon: ({ color }) => (
+            <Icon name="user" size={16} color={color} />
+          ),
         })}
       />
     </Tab.Navigator>
