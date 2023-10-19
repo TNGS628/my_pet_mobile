@@ -16,9 +16,13 @@ import { TextInputComp } from '@/components';
 import images from 'src/theme/variables';
 import LinearGradient from 'react-native-linear-gradient';
 import { ConButton } from '@/components';
+import { AppActionTypes } from 'src/context/types';
+import { APP_STACK } from 'src/navigation/screenTypes';
+import { useStore } from 'src/context/app.provider';
 
 const Login = ({ navigation }) => {
   const { colors } = useTheme();
+  const { appDispatch } = useStore();
 
   const isDarkMode = useColorScheme() === 'dark';
   const [first, setfirst] = useState();
@@ -55,7 +59,15 @@ const Login = ({ navigation }) => {
             />
           </TouchableOpacity>
           <View style={styles.registercontainer}>
-            <ConButton backgroundColor="pink" text="Нэвтрэх"></ConButton>
+            <ConButton
+              onPress={() =>
+                appDispatch({
+                  type: AppActionTypes.SWITCH_STACK,
+                  payload: APP_STACK.HOME,
+                })
+              }
+              backgroundColor="pink"
+              text="Нэвтрэх"></ConButton>
 
             <ConButton
               onPress={() => navigation.navigate('RegisterPage')}

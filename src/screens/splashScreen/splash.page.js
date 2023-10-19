@@ -14,7 +14,7 @@ const SplashPage = () => {
     const onInit = () => {
       appDispatch({
         type: AppActionTypes.SWITCH_STACK,
-        payload: APP_STACK.HOME,
+        payload: APP_STACK.APP_INTRO,
       });
     };
     const timeOut = setTimeout(onInit, 2000);

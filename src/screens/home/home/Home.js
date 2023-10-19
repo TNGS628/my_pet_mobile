@@ -136,7 +136,7 @@ const Home = () => {
                 height: 150,
                 position: 'absolute',
                 bottom: 0,
-                right: 30,
+                right: 0,
               }}></Image>
           </LinearGradient>
 

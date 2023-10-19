@@ -1,37 +1,50 @@
 import React, { useState } from 'react';
-import {SafeAreaView, useColorScheme, View, Image, TouchableOpacity} from 'react-native';
+import {
+  SafeAreaView,
+  useColorScheme,
+  View,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
 import { useTheme } from '@react-navigation/native';
 
 //components
 import styles from './styles.js';
-import { TextComp }from '@/components';
-import { ConButton }  from '@/components'
-import images from '../../../theme/variables'
-
+import { TextComp } from '@/components';
+import { ConButton } from '@/components';
+import images from '../../../theme/variables';
+import { Informationcomp } from '@/components';
 
 const Tips = () => {
   const { colors } = useTheme();
 
   const isDarkMode = useColorScheme() === 'dark';
-  const [first, setfirst] = useState()
-  
+  const [first, setfirst] = useState();
 
   return (
     <SafeAreaView>
-       <TouchableOpacity style={styles.skipButton}>
-            <TextComp text="Алгасах" />
-          </TouchableOpacity>
-      <View style={styles.textContainer}>
-        <TextComp text={'Тавтай морилно уу?'} style={styles.welcome} />
-      </View>
-      <View style={styles.picContainer}>
-      <Image source={images.tips1}/>
-      </View>
-      <View style={styles.secondTextContainer}>
-        <TextComp text={'Тэжээвэр амьтанд тань зориулсан хамгийн сайн туслах'} style={styles.secondText}/>
-      </View>
-      <View style={styles.buttonContainer}> 
-      </View>
+      <ScrollView>
+        <View style={{ padding: 15 }}>
+          <View style={styles.head}>
+            <Image source={images.menu} style={styles.menu} />
+            <View>
+              <Image source={images.logo} style={styles.minilogo} />
+            </View>
+            <View>
+              <Image source={images.searchicon} style={styles.search} />
+            </View>
+          </View>
+          <View style={styles.pisda}>
+            <TextComp text="Эмнэлэгийн байршил" style={styles.headtitle} />
+          </View>
+          <View style={{ display: 'flex', rowGap: 20 }}>
+            {[0, 1, 2, 3].map(() => (
+              <Informationcomp></Informationcomp>
+            ))}
+          </View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
