@@ -1,9 +1,12 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
+    continueButton: {
+        color: 'red',
+    },
     headContainer: {
-        backgroundColor: 'black',
+        width: "100%",
         height: "100%",
-        width: "100%"
+        backgroundColor: "red",
     }
 });
