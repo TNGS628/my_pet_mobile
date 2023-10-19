@@ -15,7 +15,6 @@ import styles from './styles.js';
 import { TextComp } from '@/components';
 import images from '../../../theme/variables';
 import LinearGradient from 'react-native-linear-gradient';
-import { ConButton } from '@/components';
 import { HomeCard } from '@/components';
 
 const animals = [
