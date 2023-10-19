@@ -34,20 +34,20 @@ const Login = ({ navigation }) => {
           <View style={styles.headlogos}>
             <Image style={styles.headlogos} source={images.logo} />
           </View>
-          <LinearGradient
-            colors={['#fff', 'red']}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 0 }}
-            style={{ marginTop: 150 }}>
-            <TextComp text="My" style={styles.my} />
-          </LinearGradient>
+
+          <TextComp text="My" style={styles.my} />
+
           <TextComp text="Pet" style={styles.pet} />
         </View>
-        <TextInputComp placeholder="Нэвтрэх нэр"></TextInputComp>
+        <TextInputComp
+          srtyle={styles.nevtreh}
+          placeholder="Нэвтрэх нэр"></TextInputComp>
         <TextInputComp
           placeholder="Нууц үг"
           style={styles.container}></TextInputComp>
         <View>
+          <Image style={styles.faceid} source={images.face} />
+
           <TouchableOpacity style={styles.forgetpasswordcontainer}>
             <TextComp
               text="Нууц үгээ мартсан уу?"
@@ -56,10 +56,11 @@ const Login = ({ navigation }) => {
           </TouchableOpacity>
           <View style={styles.registercontainer}>
             <ConButton backgroundColor="pink" text="Нэвтрэх"></ConButton>
+
             <ConButton
               onPress={() => navigation.navigate('RegisterPage')}
               backgroundColor="orange"
-              text="Burtguuleh"></ConButton>
+              text="Бүртгүүлэх"></ConButton>
           </View>
         </View>
       </View>

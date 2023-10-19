@@ -2,35 +2,26 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'center',
+    paddingLeft: 10,
+    marginBottom: 100,
   },
-  my: {
-    fontSize: 40,
-    fontFamily: 'kopub batang',
-    color: 'rgb(70,171,205)',
-    marginTop: 150,
-  },
-  pet: {
-    fontSize: 40,
-    fontFamily: 'Kopub batang',
-    color: 'rgb(64,64,64)',
-    marginTop: 150,
-  },
-  forget_password: {
-    fontSize: 16,
+  alltext: {
+    fontSize: 15,
     fontFamily: 'Roboto',
-    alignItems: 'center',
-    marginTop: 80,
+    color: '#2b2b2b',
   },
-  headlogos: {
-    marginTop: 30,
-    height: 60,
-    width: 60,
-    marginTop: 150,
+  leftarrow: {
+    marginTop: 20,
   },
-  forgetpasswordcontainer: {
-    alignItems: 'center',
+  welcome: {
+    fontSize: 25,
+    color: '#555555',
+    fontWeight: 'bold',
+    marginTop: 20,
+    marginBottom: 30,
+  },
+  input: {
+    borderWidth: 10,
+    backgroundColor: 'red',
   },
 });
