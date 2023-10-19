@@ -7,6 +7,11 @@ const images = {
   back: require('./../assets/images/backArrow.png'),
   cat: require('./../assets/images/cat.png'),
   dog: require('./../assets/images/dog.png'),
+  profile: require('./../assets/images/profile.png'),
+  instagram: require('./../assets/images/instagram.png'),
+  facebook: require('./../assets/images/facebook.png'),
+  twitter: require('./../assets/images/twitter.png'),
+  star: require('./../assets/images/star.png'),
 };
 
 export default images;
