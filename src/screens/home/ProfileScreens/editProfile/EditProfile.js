@@ -14,14 +14,14 @@ import { useTheme } from '@react-navigation/native';
 import styles from './styles.js';
 
 //components
-import { TextComp } from '@/components';
+import LinearGradient from 'react-native-linear-gradient';
+import { TextInputComp } from '@/components';
 
 //screens
 import UserProfile from '../userProfile/UserProfile.js';
 
 //images
 import images from '../../../../theme/variables';
-import { TextInputComp } from '@/components';
 
 const EditProfile = ({ navigation }) => {
   const { colors } = useTheme();
@@ -70,11 +70,14 @@ const EditProfile = ({ navigation }) => {
                 style={styles.changeInfo}
               />
             </View>
-            <TouchableOpacity
-              style={styles.saveButton}
-              onPress={() => navigation.navigate('UserProfile')}>
-              <Text style={styles.saveButtonText}>Хадгалах</Text>
-            </TouchableOpacity>
+            <LinearGradient
+              colors={['#80aceb', '#6ea1ee', '#5e96f0']}
+              style={styles.saveButton}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('UserProfile')}>
+                <Text style={styles.saveButtonText}>Хадгалах</Text>
+              </TouchableOpacity>
+            </LinearGradient>
           </View>
         </View>
       </ScrollView>

@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import {SafeAreaView, useColorScheme, View, Image, TouchableOpacity} from 'react-native';
 import { useTheme } from '@react-navigation/native';
+import { useStore } from 'src/context/app.provider';
+import { AppActionTypes } from 'src/context/types';
+import { APP_STACK } from 'src/navigation/screenTypes';
+
+
+
 
 //components
 import styles from './styles.js';
@@ -9,8 +15,11 @@ import { ConButton }  from '@/components'
 import images from '../../../theme/variables'
 
 
-const Tips = () => {
+
+const Tips = ({navigation}) => {
   const { colors } = useTheme();
+  const { appDispatch } = useStore();
+
 
   const isDarkMode = useColorScheme() === 'dark';
   const [first, setfirst] = useState()
@@ -18,7 +27,12 @@ const Tips = () => {
 
   return (
     <SafeAreaView>
-       <TouchableOpacity style={styles.skipButton}>
+       <TouchableOpacity style={styles.skipButton} onPress={() =>
+                appDispatch({
+                  type: AppActionTypes.SWITCH_STACK,
+                  payload: APP_STACK.AUTH,
+                })
+              }>
             <TextComp text="Алгасах" />
           </TouchableOpacity>
       <View style={styles.textContainer}>

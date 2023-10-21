@@ -9,6 +9,8 @@ import {
   ScrollView,
 } from 'react-native';
 import { useTheme } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+
 
 //styles
 import styles from './styles.js';
@@ -18,6 +20,7 @@ import { TextComp } from '@/components';
 
 //images
 import images from '../../../../theme/variables';
+
 
 const UserProfile = ({ navigation }) => {
   const { colors } = useTheme();
@@ -54,7 +57,8 @@ const UserProfile = ({ navigation }) => {
               <Text style={styles.bio}>Миний тухай</Text>
               <TouchableOpacity
                 onPress={() => navigation.navigate('EditProfile')}>
-                <Image source={images.profile} style={styles.editButton} />
+                <Icon name="bars" color="#070A3C" size={16} />
+
               </TouchableOpacity>
             </View>
 
@@ -67,9 +71,9 @@ const UserProfile = ({ navigation }) => {
           </View>
           <View style={styles.quali}>
             <Text style={styles.qualify}>Миний мэдээлэл</Text>
-            <TextComp text={'Нас      22'} style={styles.qualiText} />
+            <TextComp text={'Нас  -     22'} style={styles.qualiText} />
             <TextComp
-              text={'Миний тэжээвэр амьтад        Нохой '}
+              text={'Миний тэжээвэр амьтад   -        Нохой '}
               style={styles.qualiText}
             />
           </View>

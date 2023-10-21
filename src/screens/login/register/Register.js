@@ -38,23 +38,25 @@ const Register = ({ navigation }) => {
 
         <View>
           <TextComp text="Таны нэр хэн бэ ?" style={styles.alltext} />
-          <TextInputComp style={styles.input}></TextInputComp>
+          <TextInputComp style={styles.input} />
         </View>
 
         <View>
           <TextComp text="И-Мейл хаягаа оруулна уу." style={styles.alltext} />
         </View>
-        <TextInputComp></TextInputComp>
+        <TextInputComp />
         <View>
           <TextComp text="Нууц үгээ оруулна уу." style={styles.alltext} />
-          <TextInputComp></TextInputComp>
+          <TextInputComp />
         </View>
         <View>
           <TextComp text="Нууц үгээ дахин оруулна уу." style={styles.alltext} />
-          <TextInputComp style={styles.haha}></TextInputComp>
+          <TextInputComp style={styles.haha} />
         </View>
       </View>
-      <ConButton backgroundColor="black" text="asaassa"></ConButton>
+      <View style={styles.conButton}>
+      <ConButton backgroundColor="black" text="Бүртгүүлэх"  />
+      </View>
     </SafeAreaView>
   );
 };

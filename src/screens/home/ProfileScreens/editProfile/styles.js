@@ -45,10 +45,11 @@ export default StyleSheet.create({
     borderRadius: 100
   },
   editInfo: {
+    justifyContent: "center",
+    borderRadius: 20,
     marginTop: Calculator(20),
     backgroundColor: "#f7f7f7",
-    height: Calculator(80),
-    borderRadius: 10,
+    height: Calculator(70),
     marginVertical: Calculator(10),
   },
   infoChangeContainer: {
@@ -63,8 +64,10 @@ export default StyleSheet.create({
   saveButton: {
     alignItems: "center",
     backgroundColor: "#36cde9",
-    height: Calculator(80),
+    height: Calculator(70),
     justifyContent: "center",
-    borderRadius: 10
+    borderRadius: 10,
+    colors: ['#80aceb', '#6ea1ee', '#5e96f0']
+
   }
 });

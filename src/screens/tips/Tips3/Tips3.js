@@ -8,9 +8,15 @@ import { TextComp }from '@/components';
 import { ConButton }  from '@/components'
 import images from '../../../theme/variables'
 
+import { useStore } from 'src/context/app.provider';
+import { AppActionTypes } from 'src/context/types';
+import { APP_STACK } from 'src/navigation/screenTypes';
 
-const Tips = () => {
+
+const Tips = ({navigation}) => {
   const { colors } = useTheme();
+  const { appDispatch } = useStore();
+
 
   const isDarkMode = useColorScheme() === 'dark';
   const [first, setfirst] = useState()
@@ -18,12 +24,17 @@ const Tips = () => {
 
   return (
     <SafeAreaView style={styles.headContainer}>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
+      {/* <TouchableOpacity onPress={() => navigation.goBack()}>
         <Image source={images.back} style={styles.backButton} />
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.skipButton}>
+      </TouchableOpacity> */}
+      <TouchableOpacity style={styles.skipButton} onPress={() =>
+                appDispatch({
+                  type: AppActionTypes.SWITCH_STACK,
+                  payload: APP_STACK.AUTH,
+                })
+              }>
             <TextComp text="Алгасах" />
-      </TouchableOpacity>
+          </TouchableOpacity>
       <View style={styles.picContainer}>
       <Image source={images.tips3}/>
       </View>

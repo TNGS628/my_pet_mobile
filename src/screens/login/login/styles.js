@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import Calculator from 'src/utils/calculator';
 
 export const styles = StyleSheet.create({
   container: {
@@ -11,13 +12,23 @@ export const styles = StyleSheet.create({
     fontSize: 40,
     fontFamily: 'kopub batang',
     color: 'rgb(70,171,205)',
-    marginTop: 100,
+    marginTop: Calculator(100),
   },
   pet: {
     fontSize: 40,
     fontFamily: 'Kopub batang',
     color: 'rgb(64,64,64)',
-    marginTop: 100,
+    marginTop: Calculator(100),
+  },
+  passwordContainer: {
+    // backgroundColor: "red",
+    height: Calculator(50),
+    justifyContent: "center",
+
+  },
+  textinputContainer: {
+    justifyContent: "space-between",
+    
   },
   forget_password: {
     fontSize: 16,

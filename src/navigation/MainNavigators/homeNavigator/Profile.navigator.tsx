@@ -13,8 +13,22 @@ export const ProfileNavigator = () => {
       initialRouteName="ProfilePage"
       screenOptions={{ headerShown: false }}>
       <ProfileStack.Screen
-        name="AppIntroPage"
+        name="UserProfile"
         component={UserProfile}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <ProfileStack.Screen
+        name="EditProfile"
+        component={EditProfile}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <ProfileStack.Screen
+        name="Profile"
+        component={Profile}
         options={{
           headerShown: false,
         }}

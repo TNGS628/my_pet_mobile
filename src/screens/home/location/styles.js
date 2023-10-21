@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import Calculator from 'src/utils/calculator';
 
 export default StyleSheet.create({
   head: {
@@ -10,23 +11,23 @@ export default StyleSheet.create({
     // backgroundColor: 'yellow',
   },
   minilogo: {
-    width: 40,
-    height: 40,
+    width: Calculator(45),
+    height: Calculator(45),
     color: 'black',
   },
   menu: {
-    width: 32,
-    height: 32,
+    width: Calculator(32),
+    height: Calculator(32),
     // backgroundColor: 'black',
   },
   search: {
-    width: 40,
-    height: 40,
+    width: Calculator(45),
+    height: Calculator(45),
     // backgroundColor: 'red',
     marginTop: 3,
   },
   headtitle: {
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: 'bold',
     color: '#E58A8A',
   },

@@ -20,6 +20,14 @@ import { Informationcomp } from '@/components';
 function Information({ navigation }) {
   const isDarkMode = useColorScheme() === 'dark';
   const [first, setfirst] = useState();
+  const data = [ 
+    {
+      name: 'tejeever amitnaa herhen zuv usand oruulah ve?', 
+      company: 'ub v',
+    },
+      {name: 'tejeever amitnaa herhen zuv usand oruulah ve?', 
+      company: 'ub v'
+    }]
 
   return (
     <SafeAreaView>
@@ -38,9 +46,8 @@ function Information({ navigation }) {
             <TextComp text="Зөвлөгөө" style={styles.headtitle} />
           </View>
           <View style={{ display: 'flex', rowGap: 20 }}>
-            {[0, 1, 2, 3].map(() => (
-              <Informationcomp></Informationcomp>
-            ))}
+            {data.map((item,idx)=> (
+              <Informationcomp key={idx} item={item}></Informationcomp>            ))}
           </View>
         </View>
       </ScrollView>

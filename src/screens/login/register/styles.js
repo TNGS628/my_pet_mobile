@@ -1,14 +1,19 @@
 import { StyleSheet } from 'react-native';
+import Calculator from 'src/utils/calculator';
 
 export const styles = StyleSheet.create({
   container: {
     paddingLeft: 10,
     marginBottom: 100,
+    justifyContent: "center",
+    width: "88%",
+    marginLeft: Calculator(25)
   },
   alltext: {
     fontSize: 15,
     fontFamily: 'Roboto',
     color: '#2b2b2b',
+    marginBottom: Calculator(15)
   },
   leftarrow: {
     marginTop: 20,
@@ -22,6 +27,12 @@ export const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 10,
-    backgroundColor: 'red',
+    backgroundColor: 'red'
   },
+  conButton: {
+    width: "88%",
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: Calculator(25)
+  }
 });

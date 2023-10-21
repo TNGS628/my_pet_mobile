@@ -10,16 +10,19 @@ const Informationcomp = ({
   text = '',
   backgroundColor = '',
   onPress = () => {},
+  item = {}
 }) => {
   const { colors } = useTheme();
   return (
     <View style={styles.box}>
       <Image source={images.info} stytle={styles.img} />
       <View style={styles.minibox}>
-        <TextComp text="Тэжээвэ " style={styles.itext} />
-        <TextComp text=" зөв усанд ?" style={styles.itext} />
+        <TextComp text={item.name} style={styles.itext} />
+        {/* <TextComp text="хэрхэн зөв усанд" style={styles.itext} />
+        <TextComp text="оруулах вэ?" style={styles.itext} /> */}
+
         <View>
-          <TextComp text="“UB V" style={styles.drsaid} />
+          <TextComp text={item.company} style={styles.drsaid} />
           <View style={styles.cont}>
             <TextComp text="Цааш үзэх" style={styles.continue} />
             <Image source={images.rarrow} style={styles.arrow} />

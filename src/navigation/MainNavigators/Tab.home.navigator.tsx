@@ -7,6 +7,7 @@ import { LocationNavigator } from './homeNavigator/Location.navigator';
 import { ProfileNavigator } from './homeNavigator/Profile.navigator';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { View } from 'react-native';
+import Calculator from 'src/utils/calculator';
 
 const Tab = createBottomTabNavigator();
 
@@ -37,7 +38,7 @@ export const TabHomeNavigator = () => {
         options={() => ({
           title: 'Нүүр',
           tabBarIcon: ({ color }) => (
-            <Icon name="home" size={16} color={color} />
+            <Icon name="home" size={Calculator(20)}color={color} />
           ),
         })}
       />
@@ -47,7 +48,7 @@ export const TabHomeNavigator = () => {
         options={() => ({
           title: 'Mэдээлэл',
           tabBarIcon: ({ color }) => (
-            <Icon name="paw" size={16} color={color} />
+            <Icon name="paw" size={Calculator(20)} color={color} />
           ),
         })}
       />
@@ -57,7 +58,7 @@ export const TabHomeNavigator = () => {
         options={() => ({
           title: 'Байршил',
           tabBarIcon: ({ color }) => (
-            <Icon name="map" size={16} color={color} />
+            <Icon name="map" size={Calculator(20)} color={color} />
           ),
         })}
       />
@@ -67,7 +68,7 @@ export const TabHomeNavigator = () => {
         options={() => ({
           title: 'Профайл',
           tabBarIcon: ({ color }) => (
-            <Icon name="user" size={16} color={color} />
+            <Icon name="user" size={Calculator(20)} color={color} />
           ),
         })}
       />

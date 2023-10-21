@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { Calculator } from '@/utils/calculator';
+import Calculator from 'src/utils/calculator';
 import { useTheme } from '@react-navigation/native';
+import fontCalculator from 'src/utils/fontCalculator';
 
 // const {colors} = useTheme();
 
@@ -31,28 +32,29 @@ export default StyleSheet.create({
   minibox: {
     alignItems: 'center',
     marginTop: 15,
+    flex: 1
   },
   img: {
     width: 80,
     height: 70,
   },
   itext: {
-    fontSize: 15,
+    fontSize: fontCalculator(14),
     fontWeight: 'bold',
     color: '#2B2B2BE5',
     fontFamily: 'Roboto',
-    paddingLeft: 25,
+  
 
     // width: 200,
   },
   drsaid: {
-    paddingLeft: 25,
+    paddingLeft: 15,
     color: '#2B2B2B66',
     marginTop: 10,
     fontSize: 13,
   },
   continue: {
-    fontSize: 20,
+    fontSize: fontCalculator(18),
     fontWeight: 'bold',
     color: '#E58A8A',
     paddingLeft: 15,
@@ -65,8 +67,8 @@ export default StyleSheet.create({
   },
   arrow: {
     marginTop: 13.5,
-    width: 30,
-    height: 10,
-    marginLeft: 20,
+    width: Calculator(25),
+    height: Calculator(10),
+    marginLeft: Calculator(10),
   },
 });

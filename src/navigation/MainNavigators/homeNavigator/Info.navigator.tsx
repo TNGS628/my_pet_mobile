@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import AppIntroPage from 'src/screens/tips/Appintro';
-import Information from 'src/screens/home/information';
+import Information from 'src/screens/home/Information';
 
 const InfoStack = createStackNavigator();
 

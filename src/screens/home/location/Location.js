@@ -16,31 +16,32 @@ import { ConButton } from '@/components';
 import images from '../../../theme/variables';
 import { Informationcomp } from '@/components';
 
-const Tips = () => {
+const Tips = ( ) => {
   const { colors } = useTheme();
 
   const isDarkMode = useColorScheme() === 'dark';
   const [first, setfirst] = useState();
+  const data = [ 
+    {
+      name: 'tejeever amitnaa herhen zuv usand oruulah ve?', 
+      company: 'ub v',
+    },
+      {name: 'tejeever amitnaa herhen zuv usand oruulah ve?', 
+      company: 'ub v'
+    }]
 
   return (
     <SafeAreaView>
       <ScrollView>
         <View style={{ padding: 15 }}>
-          <View style={styles.head}>
-            <Image source={images.menu} style={styles.menu} />
-            <View>
-              <Image source={images.logo} style={styles.minilogo} />
-            </View>
-            <View>
-              <Image source={images.searchicon} style={styles.search} />
-            </View>
-          </View>
+          
           <View style={styles.pisda}>
             <TextComp text="Эмнэлэгийн байршил" style={styles.headtitle} />
           </View>
           <View style={{ display: 'flex', rowGap: 20 }}>
-            {[0, 1, 2, 3].map(() => (
-              <Informationcomp></Informationcomp>
+            {data.map((item,idx) => (
+
+              <Informationcomp key={idx} item={item}></Informationcomp>
             ))}
           </View>
         </View>

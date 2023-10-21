@@ -38,20 +38,22 @@ const Login = ({ navigation }) => {
           <View style={styles.headlogos}>
             <Image style={styles.headlogos} source={images.logo} />
           </View>
-
           <TextComp text="My" style={styles.my} />
-
           <TextComp text="Pet" style={styles.pet} />
         </View>
-        <TextInputComp
-          srtyle={styles.nevtreh}
-          placeholder="Нэвтрэх нэр"></TextInputComp>
-        <TextInputComp
-          placeholder="Нууц үг"
-          style={styles.container}></TextInputComp>
+        <View style={styles.textinputContainer}>
+        <View style={styles.passwordContainer}>
+          <TextInputComp
+            style={styles.nevtreh}
+            placeholder="Нэвтрэх нэр" />
+        </View>
+        <View style={styles.passwordContainer}>
+          <TextInputComp
+            placeholder="Нууц үг" />
+        </View>
+        </View>
         <View>
           <Image style={styles.faceid} source={images.face} />
-
           <TouchableOpacity style={styles.forgetpasswordcontainer}>
             <TextComp
               text="Нууц үгээ мартсан уу?"

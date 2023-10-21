@@ -18,9 +18,9 @@ const Tips = () => {
 
   return (
     <SafeAreaView style={styles.headContainer}>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
+      {/* <TouchableOpacity onPress={() => navigation.goBack()}>
         <Image source={images.back} style={styles.backButton} />
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <View style={styles.picContainer}>
       <Image source={images.tips4}/>
       </View>

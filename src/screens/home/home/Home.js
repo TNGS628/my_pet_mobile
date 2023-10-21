@@ -66,11 +66,11 @@ const Home = () => {
               </View>
               <View style={[styles.locContainer, { marginTop: 5 }]}>
                 <TextComp
-                  text="Chicago,"
+                  text="Hello"
                   style={{ fontSize: 20, color: '#070A3C', fontWeight: '700' }}
                 />
                 <TextComp
-                  text="US"
+                  text="Tengis"
                   style={{ fontSize: 20, color: '#070A3C' }}
                 />
               </View>
