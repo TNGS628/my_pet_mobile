@@ -1,3 +1,3 @@
-import Information from './Information';
+import Information from './InformationPage';
 
 export default Information;

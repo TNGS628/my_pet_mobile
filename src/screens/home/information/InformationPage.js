@@ -13,21 +13,20 @@ import { useTheme } from '@react-navigation/native';
 import styles from './styles.js';
 import { TextComp } from '@/components';
 import { ConButton } from '@/components';
-import images from '../../../theme/variables';
 import TextInputComp from '@/components';
 import { Informationcomp } from '@/components';
+import images from '../../../theme/variables';
 
-function Information({ navigation }) {
+function InformationPage({ navigation }) {
   const isDarkMode = useColorScheme() === 'dark';
   const [first, setfirst] = useState();
-  const data = [ 
+  const data = [
     {
-      name: 'tejeever amitnaa herhen zuv usand oruulah ve?', 
+      name: 'tejeever amitnaa herhen zuv usand oruulah ve?',
       company: 'ub v',
     },
-      {name: 'tejeever amitnaa herhen zuv usand oruulah ve?', 
-      company: 'ub v'
-    }]
+    { name: 'tejeever amitnaa herhen zuv usand oruulah ve?', company: 'ub v' },
+  ];
 
   return (
     <SafeAreaView>
@@ -46,8 +45,9 @@ function Information({ navigation }) {
             <TextComp text="Зөвлөгөө" style={styles.headtitle} />
           </View>
           <View style={{ display: 'flex', rowGap: 20 }}>
-            {data.map((item,idx)=> (
-              <Informationcomp key={idx} item={item}></Informationcomp>            ))}
+            {data.map((item, idx) => (
+              <Informationcomp key={idx} item={item}></Informationcomp>
+            ))}
           </View>
         </View>
       </ScrollView>
@@ -55,4 +55,4 @@ function Information({ navigation }) {
   );
 }
 
-export default Information;
+export default InformationPage;
