@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Image, Text, StatusBar } from 'react-native';
+import { View, Image, StatusBar } from 'react-native';
 import { useStore } from 'src/context/app.provider';
 
 import images from 'src/theme/variables';
@@ -23,13 +23,13 @@ const SplashPage = () => {
   }, []);
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: "#3c3c4a" }}>
       <StatusBar backgroundColor="#eee" barStyle="dark-content" />
-      <View>
-        <Image source={images.logo} />
+      <View style={{width: "100%", height: "100%", alignItems: "center", justifyContent: "center"}} >
+        <Image source={images.splash} style={{width: "60%", height: 200, objectFit: "contain"}} />
         <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-          <TextComp text="My" style={{ fontSize: 30, color: 'aqua' }} />
-          <TextComp text="Pet" style={{ fontSize: 30 }} />
+          <TextComp text="Pet" style={{ fontSize: 30, color: 'aqua' }} />
+          <TextComp text="Lovers" style={{ fontSize: 30, color: "white" }} />
         </View>
       </View>
     </View>

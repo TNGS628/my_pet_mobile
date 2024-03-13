@@ -2,8 +2,10 @@ import { StyleSheet } from 'react-native';
 import {Calculator} from '@/utils/calculator';
 
 export default StyleSheet.create({
-    headContainer: {
-        top: 100
+    welcome: {
+        fontSize: 24,
+        color: '#2E6C9E',
+        fontWeight: 'bold',
     },
     textContainer: {
         justifyContent: 'center',
@@ -11,21 +13,21 @@ export default StyleSheet.create({
         marginTop: 94
     },
     secondText: {
-        fontSize: 18,
-        fontWeight: '500',
+        fontSize: 16,
+        fontWeight: '300',
         fontStyle: 'bold',
-        fontFamily: 'Roboto',
         color: '#808080',
-        width: '80%'
+        textAlign: "center"
+
     },
     secondTextContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 30
-        
+        marginTop: 30,
+        paddingHorizontal: 30
     },
     picContainer: {
-        alignItems: 'center'
+        alignItems: 'center',
     },
     buttonContainer: {
         justifyContent: 'center',
@@ -38,11 +40,11 @@ export default StyleSheet.create({
     skipButton: {
         position: 'absolute',
         right: 23,
-        bottom: 400,
+        top: 30,
       },
     backButton: {
         position: 'absolute',
         left: 23,
-        top: -45
+        top: 30,
     }
 });

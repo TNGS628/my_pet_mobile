@@ -32,9 +32,9 @@ const AppIntroPage = () => {
 
   const renderScene = SceneMap({
     first: () => <Tips1 />,
-    second: () => <Tips2 />,
-    third: () => <Tips3 />,
-    fourth: () => <Tips4 />,
+    second: () => <Tips2 changeScreen={changeScreen} />,
+    third: () => <Tips3 changeScreen={changeScreen} />,
+    fourth: () => <Tips4 changeScreen={changeScreen} />,
   });
   const onSuccess = async () => {
     appDispatch({
@@ -42,6 +42,9 @@ const AppIntroPage = () => {
       payload: APP_STACK.GUEST,
     });
   };
+  const changeScreen = () => {
+    setIndex(index - 1)
+  }
 
   const colorPicker = index => {
     switch (index) {
@@ -72,11 +75,6 @@ const AppIntroPage = () => {
               return <View style={dotStyle(index)} />;
             })}
           </View>
-          {/* <LinearGradient
-            colors={['#ABCC36', '#6EA55A']}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 0 }}
-            > */}
           <ConButton
             backgroundColor={colorPicker(index)}
             onPress={() => {
@@ -102,6 +100,7 @@ const AppIntroPage = () => {
       renderScene={renderScene}
       onIndexChange={setIndex}
       renderTabBar={renderTabBar}
+      style={{backgroundColor: "#fff"}}
     />
   );
 };

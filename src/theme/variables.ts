@@ -18,6 +18,7 @@ const images = {
   facebook: require('./../assets/images/facebook.png'),
   twitter: require('./../assets/images/twitter.png'),
   star: require('./../assets/images/star.png'),
+  splash: require('./../assets/images/splash.png'),
 };
 
 export default images;

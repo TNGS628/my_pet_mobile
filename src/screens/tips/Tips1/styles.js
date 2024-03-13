@@ -6,8 +6,6 @@ export default StyleSheet.create({
         fontSize: 24,
         color: '#ABCC36',
         fontWeight: 'bold',
-        fontStyle: 'italic'
-        
     },
     textContainer: {
         justifyContent: 'center',
@@ -15,20 +13,21 @@ export default StyleSheet.create({
         marginTop: 94
     },
     secondText: {
-        fontSize: 18,
-        fontWeight: '500',
+        fontSize: 16,
+        fontWeight: '300',
         fontStyle: 'bold',
-        fontFamily: 'Roboto',
-        color: '#808080'
+        color: '#808080',
+        textAlign: "center"
+
     },
     secondTextContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 30
+        marginTop: 30,
+        paddingHorizontal: 20
     },
     picContainer: {
         alignItems: 'center',
-        marginTop: 20
     },
     buttonContainer: {
         justifyContent: 'center',
@@ -41,7 +40,7 @@ export default StyleSheet.create({
     skipButton: {
         position: 'absolute',
         right: 23,
-        bottom: 360,
+        top: 30,
       },
     backButton: {
         position: 'absolute',
