@@ -19,6 +19,7 @@ const images = {
   twitter: require('./../assets/images/twitter.png'),
   star: require('./../assets/images/star.png'),
   splash: require('./../assets/images/splash.png'),
+  google: require('./../assets/images/google.png'),
 };
 
 export default images;

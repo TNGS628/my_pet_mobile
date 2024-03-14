@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 // import libraries
-import React, {useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 import {
   Image,
   View,
@@ -11,7 +11,7 @@ import {
   Keyboard,
   TouchableWithoutFeedback,
 } from 'react-native';
-// import {Button, Divider} from 'native-base';
+import { Button, Divider } from 'native-base';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { styles } from './styles';
 import images from 'src/theme/variables';
@@ -21,8 +21,7 @@ import images from 'src/theme/variables';
 // import {BACKEND_URL} from '@env';
 // import showToast from '../../../utils/showToast';
 
-const RegisterPage = ({navigation}) => {
-
+const RegisterPage = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -68,7 +67,7 @@ const RegisterPage = ({navigation}) => {
   };
 
   return (
-    <ScrollView style={{backgroundColor: '#fff'}}>
+    <ScrollView style={{ backgroundColor: '#fff' }}>
       <TouchableWithoutFeedback onPress={handleTapOutside}>
         <View style={styles.authContainer}>
           <View
@@ -79,12 +78,13 @@ const RegisterPage = ({navigation}) => {
               marginBottom: 20,
             }}>
             <Image
-              source={images.cat}
-              style={{width: '100%', height: '100%', borderRadius: 16}}
+              source={images.splash}
+              style={{ width: '100%', height: '100%', borderRadius: 16 }}
             />
           </View>
-          <View style={{width: '100%', marginBottom: 35}}>
-            <Text style={{fontSize: 30, color: '#172B47', fontWeight: 'bold'}}>
+          <View style={{ width: '100%', marginBottom: 25 }}>
+            <Text
+              style={{ fontSize: 30, color: '#172B47', fontWeight: 'bold' }}>
               Sign Up
             </Text>
           </View>
@@ -94,15 +94,15 @@ const RegisterPage = ({navigation}) => {
               display: 'flex',
               flexDirection: 'row',
               alignItems: 'center',
-              marginBottom: 30,
+              marginBottom: 20,
             }}>
             <Icon
               name="alternate-email"
               color={'#9EA3A8'}
               size={20}
-              style={{marginRight: 10, alignSelf: 'flex-start'}}
+              style={{ marginRight: 10 }}
             />
-            <View style={{width: '100%', paddingRight: 30}}>
+            <View style={{ width: '100%', paddingRight: 30 }}>
               <TextInput
                 ref={emailRef}
                 value={email}
@@ -114,11 +114,10 @@ const RegisterPage = ({navigation}) => {
                 style={{
                   borderTopWidth: 0,
                   color: '#9EA3A8',
-                  marginBottom: 8,
                   fontWeight: '600',
                 }}
               />
-              {/* <Divider /> */}
+              <Divider />
             </View>
           </View>
 
@@ -127,15 +126,15 @@ const RegisterPage = ({navigation}) => {
               display: 'flex',
               flexDirection: 'row',
               alignItems: 'center',
-              marginBottom: 30,
+              marginBottom: 20,
             }}>
             <Icon
               name="fingerprint"
               color={'#9EA3A8'}
               size={20}
-              style={{marginRight: 10, alignSelf: 'flex-start'}}
+              style={{ marginRight: 10 }}
             />
-            <View style={{width: '100%', paddingRight: 30}}>
+            <View style={{ width: '100%', paddingRight: 30 }}>
               <TextInput
                 ref={nameRef}
                 value={name}
@@ -147,11 +146,10 @@ const RegisterPage = ({navigation}) => {
                 style={{
                   borderTopWidth: 0,
                   color: '#9EA3A8',
-                  marginBottom: 8,
                   fontWeight: '600',
                 }}
               />
-              {/* <Divider /> */}
+              <Divider />
             </View>
           </View>
 
@@ -166,9 +164,9 @@ const RegisterPage = ({navigation}) => {
               name="lock-outline"
               color={'#9EA3A8'}
               size={20}
-              style={{marginRight: 10, alignSelf: 'flex-start'}}
+              style={{ marginRight: 10 }}
             />
-            <View style={{width: '100%', paddingRight: 30}}>
+            <View style={{ width: '100%', paddingRight: 30 }}>
               <TextInput
                 ref={passwordRef}
                 value={password}
@@ -180,11 +178,10 @@ const RegisterPage = ({navigation}) => {
                 style={{
                   borderTopWidth: 0,
                   color: '#9EA3A8',
-                  marginBottom: 8,
                   fontWeight: '600',
                 }}
               />
-              {/* <Divider /> */}
+              <Divider />
             </View>
           </View>
 
@@ -195,27 +192,28 @@ const RegisterPage = ({navigation}) => {
               flexWrap: 'wrap',
               marginBottom: 20,
             }}>
-            <Text style={{fontWeight: '500', color: '#9EA3A8', fontSize: 13}}>
+            <Text style={{ fontWeight: '500', color: '#9EA3A8', fontSize: 13 }}>
               By signing up, you agree to our{' '}
             </Text>
-            <Text style={{fontWeight: '500', color: '#305D99', fontSize: 13}}>
-              Terms & Conditions
+            <Text style={{ fontWeight: '500', color: '#305D99', fontSize: 13 }}>
+              Terms & Conditions{' '}
             </Text>
-            <Text style={{fontWeight: '500', color: '#9EA3A8', fontSize: 13}}>
+            <Text style={{ fontWeight: '500', color: '#9EA3A8', fontSize: 13 }}>
               and{' '}
             </Text>
-            <Text style={{fontWeight: '500', color: '#305D99', fontSize: 13}}>
+            <Text style={{ fontWeight: '500', color: '#305D99', fontSize: 13 }}>
               Privacy Policy
             </Text>
           </View>
 
-          {/* <Button
+          <Button
             variant={'solid'}
             borderRadius={10}
             padding={3.5}
+            style={{ backgroundColor: '#086cfe' }}
             onPress={pressRegister}>
-            <Text style={{color: '#fff', fontWeight: '600'}}>Continue</Text>
-          </Button> */}
+            <Text style={{ color: '#fff', fontWeight: '600' }}>Continue</Text>
+          </Button>
 
           <View
             style={{
@@ -224,11 +222,12 @@ const RegisterPage = ({navigation}) => {
               marginTop: 20,
               justifyContent: 'center',
             }}>
-            <Text style={{marginRight: 5, color: '#9EA3A8', fontWeight: '500'}}>
+            <Text
+              style={{ marginRight: 5, color: '#9EA3A8', fontWeight: '500' }}>
               Joined us before?
             </Text>
             <TouchableOpacity onPress={goToLogin}>
-              <Text style={{fontWeight: '600', color: '#305D99'}}>Login</Text>
+              <Text style={{ fontWeight: '600', color: '#305D99' }}>Login</Text>
             </TouchableOpacity>
           </View>
         </View>

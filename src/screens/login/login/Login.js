@@ -17,8 +17,8 @@ import { UseGlobalStyles } from '../../../theme';
 import images from 'src/theme/variables';
 import { useStore } from '../../../context/app.provider';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import FIcon from 'react-native-vector-icons/FontAwesome';
-
+import { AppActionTypes } from 'src/context/types';
+import { APP_STACK } from 'src/navigation/screenTypes';
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -28,7 +28,11 @@ const Login = ({ navigation }) => {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
-  const pressLogin = async () => {
+  const pressLogin = () => {
+    appDispatch({
+      type: AppActionTypes.SWITCH_STACK,
+      payload: APP_STACK.HOME,
+    });
     // if (password && email) {
     //   axios
     //     .post(`${BACKEND_URL}/login`, {
@@ -74,7 +78,8 @@ const Login = ({ navigation }) => {
             />
           </View>
           <View style={{ width: '100%', marginBottom: 25 }}>
-            <Text style={{ fontSize: 30, color: '#172B47', fontWeight: 'bold' }}>
+            <Text
+              style={{ fontSize: 30, color: '#172B47', fontWeight: 'bold' }}>
               Login
             </Text>
           </View>
@@ -84,7 +89,7 @@ const Login = ({ navigation }) => {
               display: 'flex',
               flexDirection: 'row',
               alignItems: 'center',
-              marginBottom: 30,
+              marginBottom: 20,
             }}>
             <Icon
               name="alternate-email"
@@ -162,31 +167,62 @@ const Login = ({ navigation }) => {
             variant={'solid'}
             borderRadius={10}
             padding={3.5}
-            style={{ backgroundColor: "#086cfe" }}
+            style={{ backgroundColor: '#086cfe' }}
             onPress={pressLogin}>
             <Text style={{ color: '#fff', fontWeight: '600' }}>Login</Text>
           </Button>
 
-          <View style={{display: "flex", flexDirection: "row", justifyContent: "space-between", width: "100%", alignItems: "center", marginVertical: 10}} >
-            <View style={{width: "45%", height: 0.3, backgroundColor: "grey"}} />
-            <Text style={{ color: '#9EA3A8', fontWeight: '500', marginHorizontal: 10 }}>
+          <View
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              width: '100%',
+              alignItems: 'center',
+              marginVertical: 10,
+            }}>
+            <View
+              style={{ width: '45%', height: 0.3, backgroundColor: 'grey' }}
+            />
+            <Text
+              style={{
+                color: '#9EA3A8',
+                fontWeight: '500',
+                marginHorizontal: 10,
+              }}>
               OR
             </Text>
-            <View style={{width: "45%", height: 0.3, backgroundColor: "grey"}}  />
+            <View
+              style={{ width: '45%', height: 0.3, backgroundColor: 'grey' }}
+            />
           </View>
 
           <Button
             variant={'solid'}
             borderRadius={10}
             padding={3.5}
-            style={{ backgroundColor: "#F7FBFC", marginBottom: 20 }}
+            style={{ backgroundColor: '#F7FBFC', marginBottom: 20 }}
             onPress={pressLogin}>
-            <View style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-around"}} >
-
-            <FIcon color={"red"} style={{marginRight: 50}}  name='google'></FIcon>
-            <Text style={{ color: '#858FA1', fontWeight: '600' }}>Login with Google</Text>
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-around',
+              }}>
+              <Image
+                source={images.google}
+                style={{
+                  width: 20,
+                  height: 20,
+                  borderRadius: 16,
+                  marginRight: 20,
+                }}
+              />
+              <Text style={{ color: '#858FA1', fontWeight: '600' }}>
+                Login with Google
+              </Text>
             </View>
-          
           </Button>
 
           <View
@@ -195,7 +231,8 @@ const Login = ({ navigation }) => {
               flexDirection: 'row',
               justifyContent: 'center',
             }}>
-            <Text style={{ marginRight: 5, color: '#9EA3A8', fontWeight: '500' }}>
+            <Text
+              style={{ marginRight: 5, color: '#9EA3A8', fontWeight: '500' }}>
               New to Pet lovers?
             </Text>
             <TouchableOpacity

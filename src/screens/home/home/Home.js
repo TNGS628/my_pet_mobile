@@ -70,7 +70,7 @@ const Home = () => {
                   style={{ fontSize: 20, color: '#070A3C', fontWeight: '700' }}
                 />
                 <TextComp
-                  text="Tengis"
+                  text="Kenn"
                   style={{ fontSize: 20, color: '#070A3C' }}
                 />
               </View>
@@ -203,7 +203,7 @@ const Home = () => {
                 paddingHorizontal: 2,
               }}>
               {[0, 1, 2, 3].map(i => (
-                <HomeCard isLiked={i === 0} />
+                <HomeCard isLiked={i === 0 || i === 2} />
               ))}
             </View>
           </ScrollView>
