@@ -9,18 +9,20 @@ import {
   ScrollView,
 } from 'react-native';
 import { useTheme } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+
 
 //styles
 import styles from './styles.js';
 
 //components
 import { TextComp } from '@/components';
-import { ProfileAchievements } from '@/components';
 
 //images
 import images from '../../../../theme/variables';
 
-const Profile = ({ navigation }) => {
+
+const UserProfile = ({ navigation }) => {
   const { colors } = useTheme();
 
   const isDarkMode = useColorScheme() === 'dark';
@@ -33,38 +35,13 @@ const Profile = ({ navigation }) => {
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Image source={images.back} style={styles.backArrow} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.smallProfileContainer}>
-            <Image source={images.profile} style={styles.smallProfile} />
-          </TouchableOpacity>
         </View>
         <View style={styles.main}>
           <TouchableOpacity>
             <Image source={images.profile} style={styles.profileImage} />
           </TouchableOpacity>
-          <TextComp text={'Tengis Altankhuyag'} style={styles.name} />
-          <View style={styles.achContainer}>
-            <View style={styles.achievements}>
-              <ProfileAchievements text={'hello'} />
-            </View>
-            <View style={styles.achievements}>
-              <ProfileAchievements text={'hello'} />
-            </View>
-          </View>
-          <View style={styles.starBox}>
-            <Image source={images.star} style={styles.star} />
-            <Image source={images.star} style={styles.star} />
-            <Image source={images.star} style={styles.star} />
-            <Image source={images.star} style={styles.star} />
-            <Image source={images.star} style={styles.star} />
-          </View>
+          <TextComp text={'Тэнгис Алтанхуяг'} style={styles.name} />
           <View style={styles.review}>
-            <View style={styles.ratings}>
-              <TextComp text={'4.5'} style={styles.overallRating} />
-              <TextComp
-                text={' 48 total reviews'}
-                style={{ color: '#656566' }}
-              />
-            </View>
             <TouchableOpacity>
               <Image source={images.facebook} style={styles.miniLink} />
             </TouchableOpacity>
@@ -76,7 +53,15 @@ const Profile = ({ navigation }) => {
             </TouchableOpacity>
           </View>
           <View style={styles.description}>
-            <Text style={styles.bio}>Bio</Text>
+            <View style={styles.bioEdit}>
+              <Text style={styles.bio}>Миний тухай</Text>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('EditProfile')}>
+                <Icon name="bars" color="#070A3C" size={16} />
+
+              </TouchableOpacity>
+            </View>
+
             <TextComp
               text={
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the "
@@ -85,11 +70,12 @@ const Profile = ({ navigation }) => {
             />
           </View>
           <View style={styles.quali}>
-            <Text style={styles.qualify}>Qualifications</Text>
-            <TextComp text={'Comfortable '} style={styles.qualiText} />
-            <TextComp text={'Will provide '} style={styles.qualiText} />
-            <TextComp text={'no smoking '} style={styles.qualiText} />
-            <TextComp text={'College '} style={styles.qualiText} />
+            <Text style={styles.qualify}>Миний мэдээлэл</Text>
+            <TextComp text={'Нас  -     22'} style={styles.qualiText} />
+            <TextComp
+              text={'Миний тэжээвэр амьтад   -        Нохой '}
+              style={styles.qualiText}
+            />
           </View>
         </View>
       </ScrollView>
@@ -97,4 +83,4 @@ const Profile = ({ navigation }) => {
   );
 };
 
-export default Profile;
+export default UserProfile;

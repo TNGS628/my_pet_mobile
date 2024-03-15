@@ -20,6 +20,7 @@ import { ProfileAchievements } from '@/components';
 //images
 import images from '../../../../theme/variables';
 
+
 const Profile = ({ navigation }) => {
   const { colors } = useTheme();
 
@@ -60,10 +61,7 @@ const Profile = ({ navigation }) => {
           <View style={styles.review}>
             <View style={styles.ratings}>
               <TextComp text={'4.5'} style={styles.overallRating} />
-              <TextComp
-                text={' 48 total reviews'}
-                style={{ color: '#656566' }}
-              />
+              <TextComp text={' 48 total reviews'} style={{color: "#656566"}} />
             </View>
             <TouchableOpacity>
               <Image source={images.facebook} style={styles.miniLink} />

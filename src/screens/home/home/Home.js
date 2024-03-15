@@ -66,7 +66,7 @@ const Home = () => {
               </View>
               <View style={[styles.locContainer, { marginTop: 5 }]}>
                 <TextComp
-                  text="Hello"
+                  text="Hello,"
                   style={{ fontSize: 20, color: '#070A3C', fontWeight: '700' }}
                 />
                 <TextComp
@@ -81,7 +81,7 @@ const Home = () => {
                   width: 35,
                   height: 35,
                   backgroundColor: '#f7f7f8',
-                  borderRadius: 6,
+                  borderRadius: 7,
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}>
@@ -93,7 +93,7 @@ const Home = () => {
                   width: 35,
                   height: 35,
                   backgroundColor: '#f7f7f8',
-                  borderRadius: 6,
+                  borderRadius: 7,
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}>
@@ -140,15 +140,43 @@ const Home = () => {
               }}></Image>
           </LinearGradient>
 
-          <TextComp
-            text="Categories"
+          <View
             style={{
-              fontSize: 18,
-              color: '#070A3C',
-              fontWeight: '700',
-              marginVertical: 25,
-            }}
-          />
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}>
+            <TextComp
+              text="Categories"
+              style={{
+                fontSize: 18,
+                color: '#070A3C',
+                fontWeight: '700',
+                marginVertical: 25,
+              }}
+            />
+            <TouchableOpacity
+              style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <TextComp
+                text="View All"
+                style={{
+                  fontSize: 14,
+                  color: '#eecb55',
+                  fontWeight: '500',
+                  marginRight: 8,
+                }}
+              />
+              <View
+                style={{
+                  padding: 8,
+                  backgroundColor: '#eecb55',
+                  borderRadius: 8,
+                }}>
+                <Icon size={8} color={'#fff'} name="chevron-right"></Icon>
+              </View>
+            </TouchableOpacity>
+          </View>
+
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}

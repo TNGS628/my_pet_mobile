@@ -9,8 +9,9 @@ import {
   ScrollView,
 } from 'react-native';
 import { useTheme } from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
-
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon6 from 'react-native-vector-icons/FontAwesome6';
+import { BlurView } from '@react-native-community/blur';
 
 //styles
 import styles from './styles.js';
@@ -21,61 +22,116 @@ import { TextComp } from '@/components';
 //images
 import images from '../../../../theme/variables';
 
-
 const UserProfile = ({ navigation }) => {
   const { colors } = useTheme();
 
   const isDarkMode = useColorScheme() === 'dark';
   const [first, setfirst] = useState();
 
+  const menuItems = [
+    {
+      icon: 'user',
+      name: 'My Profile',
+      bcolor: '#dbebf6',
+      color: '#6bbbe8',
+    },
+    {
+      icon: 'box-open',
+      name: 'My Orders',
+      bcolor: '#d9f3de',
+      color: '#6cc26f',
+    },
+    {
+      icon: 'sack-dollar',
+      name: 'Refund',
+      bcolor: '#e2e1f7',
+      color: '#7f67f3',
+    },
+    {
+      icon: 'lock',
+      name: 'Change Password',
+      bcolor: '#f2e4e0',
+      color: '#ed9264',
+    },
+    {
+      icon: 'language',
+      name: 'Change Language',
+      bcolor: '#f2e1ef',
+      color: '#d041a2',
+    },
+  ];
+
   return (
     <SafeAreaView style={styles.headContainer}>
       <ScrollView>
-        <View style={styles.header}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Image source={images.back} style={styles.backArrow} />
-          </TouchableOpacity>
-        </View>
-        <View style={styles.main}>
-          <TouchableOpacity>
-            <Image source={images.profile} style={styles.profileImage} />
-          </TouchableOpacity>
-          <TextComp text={'Тэнгис Алтанхуяг'} style={styles.name} />
-          <View style={styles.review}>
-            <TouchableOpacity>
-              <Image source={images.facebook} style={styles.miniLink} />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Image source={images.instagram} style={styles.miniLink} />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Image source={images.twitter} style={styles.miniLink} />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.description}>
-            <View style={styles.bioEdit}>
-              <Text style={styles.bio}>Миний тухай</Text>
-              <TouchableOpacity
-                onPress={() => navigation.navigate('EditProfile')}>
-                <Icon name="bars" color="#070A3C" size={16} />
-
+        <View
+          style={{
+            backgroundColor: 'red',
+            width: '100%',
+            height: '100%',
+            flex: 1,
+          }}>
+          <View
+            style={{
+              position: 'relative',
+            }}>
+            <View style={styles.header}>
+              <TextComp text="Profile" style={styles.profileName} />
+              <TouchableOpacity style={styles.profileMoreButton}>
+                <Icon name="dots-vertical" color="#fff" size={30}></Icon>
               </TouchableOpacity>
             </View>
 
-            <TextComp
-              text={
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the "
-              }
-              style={styles.bioFont}
-            />
+            <View style={styles.profileHeadCon}>
+              <TouchableOpacity style={styles.proImagCon}>
+                <Image source={images.splash} style={styles.proImage} />
+                <TouchableOpacity style={styles.editButtonContainer}>
+                  <Icon
+                    name="circle-edit-outline"
+                    color="#fff"
+                    size={16}></Icon>
+                </TouchableOpacity>
+              </TouchableOpacity>
+              <TextComp text="Chrollo Kenn" style={styles.name} />
+              <TextComp text="+976 99248671" style={styles.phone} />
+            </View>
+
+            <Image style={styles.image} source={images.splash} />
+            <BlurView style={styles.absolute} blurType="dark" blurAmount={4} />
           </View>
-          <View style={styles.quali}>
-            <Text style={styles.qualify}>Миний мэдээлэл</Text>
-            <TextComp text={'Нас  -     22'} style={styles.qualiText} />
-            <TextComp
-              text={'Миний тэжээвэр амьтад   -        Нохой '}
-              style={styles.qualiText}
-            />
+
+          <View style={styles.menuItemContainer}>
+            <TextComp text="Account Overview" style={styles.menuHeadTitle} />
+
+            {menuItems.map(item => (
+              <TouchableOpacity
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  marginBottom: 15,
+                }}>
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                  <View
+                    style={{
+                      backgroundColor: item.bcolor,
+                      borderRadius: 14,
+                      marginRight: 20,
+                      width: 40,
+                      height: 40,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}>
+                    <Icon6
+                      name={item.icon}
+                      size={18}
+                      color={item.color}></Icon6>
+                  </View>
+                  <TextComp text={item.name} style={styles.menuItem} />
+                </View>
+                <Icon6 name="chevron-right" size={18} color="#172B47"></Icon6>
+              </TouchableOpacity>
+            ))}
           </View>
         </View>
       </ScrollView>
