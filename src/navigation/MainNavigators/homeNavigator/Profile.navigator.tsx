@@ -1,7 +1,5 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import AppIntroPage from 'src/screens/tips/Appintro';
-import Profile from 'src/screens/home/ProfileScreens/profile';
 import UserProfile from 'src/screens/home/ProfileScreens/userProfile';
 import EditProfile from 'src/screens/home/ProfileScreens/editProfile';
 
@@ -22,13 +20,6 @@ export const ProfileNavigator = () => {
       <ProfileStack.Screen
         name="EditProfile"
         component={EditProfile}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <ProfileStack.Screen
-        name="Profile"
-        component={Profile}
         options={{
           headerShown: false,
         }}

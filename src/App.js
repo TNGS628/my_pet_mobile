@@ -1,8 +1,8 @@
 import React from 'react';
-import { StatusBar, Text, View } from 'react-native';
+import { StatusBar, View } from 'react-native';
 import { StateProvider } from './context/app.provider';
 import AppNavigation from './navigation';
-import {NativeBaseProvider} from 'native-base';
+import { NativeBaseProvider } from 'native-base';
 
 const App = () => {
   return (
@@ -11,12 +11,11 @@ const App = () => {
         config={{
           suppressColorAccessibilityWarning: true,
         }}>
-      <View style={{ flex: 1 }}>
-        <StatusBar backgroundColor="#eee" barStyle="dark-content" />
-        <AppNavigation />
-      </View>
+        <View style={{ flex: 1 }}>
+          <StatusBar backgroundColor="#eee" barStyle="dark-content" />
+          <AppNavigation />
+        </View>
       </NativeBaseProvider>
-
     </StateProvider>
   );
 };

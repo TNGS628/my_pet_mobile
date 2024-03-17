@@ -1,73 +1,88 @@
 import { StyleSheet } from 'react-native';
-import Calculator from 'src/utils/calculator';
+import { Dimensions } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
 
 export default StyleSheet.create({
-  headContainer: {
-    flex: 1,
-    backgroundColor: "white"
+  container: {
+    backgroundColor: '#fff',
+    padding: 20,
+    width: '100%',
+    height: '100%',
   },
-  profileButton: {
-    width: Calculator(25),
-    height: 25,
+  proImageCon: {
+    height: 120,
+    width: 120,
+    position: 'relative',
+  },
+  proImage: {
+    height: '100%',
+    width: '100%',
+    borderRadius: 15,
+  },
+  imageIcon: {
+    position: 'absolute',
+    right: -10,
+    bottom: -10,
+    padding: 10,
+    borderRadius: 110,
+    backgroundColor: '#3f71ea',
+  },
+  iconCon: {
+    position: 'absolute',
+    borderRadius: 10,
+    backgroundColor: '#f4f7fe',
+    height: 40,
+    width: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingTop: 15,
-    paddingRight: 15,
+    alignItems: 'center',
+    marginTop: 8,
   },
-  backArrow: {
-    paddingHorizontal: 20,
-    width: 35,
-    height: 35,
+  name: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#50526a',
+    marginBottom: 20,
   },
-  smallProfile: {
-    borderRadius: 5,
-    width: 45,
-    height: 45,
-    paddingTop: 15,
-    paddingRight: 10,
-    borderRadius: 100
 
+  fieldName: {
+    fontSize: 16,
+    fontWeight: '400',
+    color: '#bfbfbf',
+    width: '30%',
   },
-  smallProfileContainer: {
-    width: 45,
-    height: 45,
+  fieldCon: {
+    flexDirection: 'row',
+    marginBottom: 10,
   },
   main: {
+    marginTop: 40,
+  },
+  fieldBottom: {
+    width: '70%',
+  },
+  divider: {
+    padding: 0,
+  },
+  button: {
+    height: 50,
+    width: 200,
+    backgroundColor: '#3f71ea',
+    borderRadius: 15,
+    flexDirection: 'row',
     alignItems: 'center',
-    
+    justifyContent: 'center',
+    position: 'absolute',
+    bottom: 20,
+    left: (windowWidth - 200) / 2,
   },
-  profileImage: {
-    width: Calculator(120),
-    height: Calculator(120),
-    paddingBottom: 10,
-    borderRadius: 100
+  buttonText: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#fff',
+    marginRight: 10,
   },
-  editInfo: {
-    justifyContent: "center",
-    borderRadius: 20,
-    marginTop: Calculator(20),
-    backgroundColor: "#f7f7f7",
-    height: Calculator(70),
-    marginVertical: Calculator(10),
-  },
-  infoChangeContainer: {
-    width: "88%",
-  },
-  saveButtonText: {
-    fontSize: 20,
-    fontWeight: "bold",
-    fontStyle: "roboto",
-    color: "#ffffff"
-  },
-  saveButton: {
-    alignItems: "center",
-    backgroundColor: "#36cde9",
-    height: Calculator(70),
-    justifyContent: "center",
-    borderRadius: 10,
-    colors: ['#80aceb', '#6ea1ee', '#5e96f0']
-
-  }
 });

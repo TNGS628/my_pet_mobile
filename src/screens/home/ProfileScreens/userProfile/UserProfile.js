@@ -83,7 +83,11 @@ const UserProfile = ({ navigation }) => {
             </View>
 
             <View style={styles.profileHeadCon}>
-              <TouchableOpacity style={styles.proImagCon}>
+              <TouchableOpacity
+                style={styles.proImagCon}
+                onPress={() => {
+                  navigation.navigate('EditProfile');
+                }}>
                 <Image source={images.splash} style={styles.proImage} />
                 <TouchableOpacity style={styles.editButtonContainer}>
                   <Icon

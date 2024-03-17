@@ -1,86 +1,91 @@
 import React, { useState } from 'react';
 import {
   SafeAreaView,
-  useColorScheme,
   View,
   Image,
   TouchableOpacity,
-  Text,
   ScrollView,
 } from 'react-native';
-import { useTheme } from '@react-navigation/native';
 
 //styles
 import styles from './styles.js';
 
-//components
-import LinearGradient from 'react-native-linear-gradient';
-import { TextInputComp } from '@/components';
-
-//screens
-import UserProfile from '../userProfile/UserProfile.js';
-
 //images
 import images from '../../../../theme/variables';
+import { TextComp } from '@/components';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import FIcon from 'react-native-vector-icons/Feather';
+import { Divider } from 'native-base';
 
 const EditProfile = ({ navigation }) => {
-  const { colors } = useTheme();
-
-  const isDarkMode = useColorScheme() === 'dark';
   const [first, setfirst] = useState();
 
   return (
-    <SafeAreaView style={styles.headContainer}>
-      <ScrollView>
-        <View style={styles.header}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Image source={images.back} style={styles.backArrow} />
-          </TouchableOpacity>
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={{ position: 'relative' }}>
+        <View>
           <TouchableOpacity
-            onPress={() => navigation.navigate('UserProfile')}
-            style={styles.smallProfileContainer}>
-            <Image source={images.profile} style={styles.smallProfile} />
+            style={styles.iconCon}
+            onPress={() => {
+              navigation.goBack();
+            }}>
+            <Icon name="arrow-back" size={20}></Icon>
           </TouchableOpacity>
-        </View>
-        <View style={styles.main}>
-          <View>
-            <TouchableOpacity style={styles.editPhoto}>
-              <Image source={images.profile} style={styles.profileImage} />
-            </TouchableOpacity>
+
+          <View style={styles.header}>
+            <TextComp text="My Profile" style={styles.name} />
+            <View style={styles.proImageCon}>
+              <Image source={images.splash} style={styles.proImage} />
+              <View style={styles.imageIcon}>
+                <FIcon name="upload-cloud" size={20} color={'#fff'}></FIcon>
+              </View>
+            </View>
           </View>
-          <View style={{ width: '88%' }}>
-            <TextInputComp placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It ha" />
-          </View>
-          <View style={styles.infoChangeContainer}>
-            <View style={styles.editInfo}>
-              <TextInputComp
-                placeholder="Нэрээ солих"
-                style={styles.changeInfo}
-              />
+
+          <View style={styles.main}>
+            <View style={styles.fieldCon}>
+              <TextComp text="Name" style={styles.fieldName} />
+              <View style={styles.fieldBottom}>
+                <TextComp text="Chrollo Ken" style={styles.name} />
+                <Divider style={styles.divider} />
+              </View>
             </View>
-            <View style={styles.editInfo}>
-              <TextInputComp
-                placeholder="И-Мэйл хаяг солих"
-                style={styles.changeInfo}
-              />
+            <View style={styles.fieldCon}>
+              <TextComp text="Email" style={styles.fieldName} />
+              <View style={styles.fieldBottom}>
+                <TextComp text="kanekkirit@gmail.com" style={styles.name} />
+                <Divider style={styles.divider} />
+              </View>
             </View>
-            <View style={styles.editInfo}>
-              <TextInputComp
-                placeholder="Тэжээвэр амьтан нэмэх"
-                style={styles.changeInfo}
-              />
+            <View style={styles.fieldCon}>
+              <TextComp text="Phone No." style={styles.fieldName} />
+              <View style={styles.fieldBottom}>
+                <TextComp text="+976 99248671" style={styles.name} />
+                <Divider style={styles.divider} />
+              </View>
             </View>
-            <LinearGradient
-              colors={['#80aceb', '#6ea1ee', '#5e96f0']}
-              style={styles.saveButton}>
-              <TouchableOpacity
-                onPress={() => navigation.navigate('UserProfile')}>
-                <Text style={styles.saveButtonText}>Хадгалах</Text>
-              </TouchableOpacity>
-            </LinearGradient>
+            <View style={styles.fieldCon}>
+              <TextComp text="Address" style={styles.fieldName} />
+              <View style={styles.fieldBottom}>
+                <TextComp
+                  text="#425/2. Block-C, Ulaanbaatar, Jamsranjav, Dalaihutagt, Marshall tower"
+                  style={styles.name}
+                />
+                <Divider style={styles.divider} />
+              </View>
+            </View>
           </View>
         </View>
       </ScrollView>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => {
+          navigation.goBack();
+        }}>
+        <TextComp text="Update" style={styles.buttonText} />
+        <MIcon name="cloud-check" size={25} color="#fff"></MIcon>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
