@@ -20,6 +20,8 @@ const images = {
   star: require('./../assets/images/star.png'),
   splash: require('./../assets/images/splash.png'),
   google: require('./../assets/images/google.png'),
+  homeDog: require('./../assets/images/home_dog.jpg'),
+  homeCat: require('./../assets/images/home_cat.png'),
 };
 
 export default images;

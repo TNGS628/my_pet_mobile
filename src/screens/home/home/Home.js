@@ -17,23 +17,7 @@ import images from '../../../theme/variables';
 import LinearGradient from 'react-native-linear-gradient';
 import { HomeCard } from '@/components';
 
-const animals = [
-  'Dog',
-  'Cat',
-  'Elephant',
-  'Lion',
-  'Tiger',
-  'Penguin',
-  'Giraffe',
-  'Zebra',
-  'Snake',
-  'Dolphin',
-  'Horse',
-  'Kangaroo',
-  'Rhinoceros',
-  'Owl',
-  'Parrot',
-];
+const animals = ['Dog', 'Cat'];
 
 const Home = () => {
   const { colors } = useTheme();
@@ -52,7 +36,7 @@ const Home = () => {
               flexDirection: 'row',
               justifyContent: 'space-between',
               alignItems: 'flex-end',
-              marginBottom: 30,
+              // marginBottom: 30,
             }}>
             <View>
               <View style={styles.locContainer}>
@@ -102,44 +86,6 @@ const Home = () => {
             </View>
           </View>
 
-          <LinearGradient
-            colors={['#80aceb', '#6ea1ee', '#5e96f0']}
-            style={styles.linearGradient}>
-            <View
-              style={{
-                flexDirection: 'column',
-                alignItems: 'flex-start',
-              }}>
-              <TextComp
-                text="Join Our Animal"
-                style={{ fontSize: 18, color: '#fff', fontWeight: '500' }}
-              />
-              <TextComp
-                text="Lovers Community"
-                style={{ fontSize: 18, color: '#fff', fontWeight: '500' }}
-              />
-              <TouchableOpacity
-                style={{
-                  padding: 15,
-                  backgroundColor: '#eecb55',
-                  borderRadius: 8,
-                  marginTop: 15,
-                  paddingVertical: 10,
-                }}>
-                <TextComp text="Join Now" style={{ color: '#fff' }} />
-              </TouchableOpacity>
-            </View>
-            <Image
-              source={images.cat}
-              style={{
-                width: 150,
-                height: 150,
-                position: 'absolute',
-                bottom: 0,
-                right: 0,
-              }}></Image>
-          </LinearGradient>
-
           <View
             style={{
               flexDirection: 'row',
@@ -155,26 +101,6 @@ const Home = () => {
                 marginVertical: 25,
               }}
             />
-            <TouchableOpacity
-              style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <TextComp
-                text="View All"
-                style={{
-                  fontSize: 14,
-                  color: '#eecb55',
-                  fontWeight: '500',
-                  marginRight: 8,
-                }}
-              />
-              <View
-                style={{
-                  padding: 8,
-                  backgroundColor: '#eecb55',
-                  borderRadius: 8,
-                }}>
-                <Icon size={8} color={'#fff'} name="chevron-right"></Icon>
-              </View>
-            </TouchableOpacity>
           </View>
 
           <ScrollView
@@ -190,25 +116,52 @@ const Home = () => {
                   padding: 15,
                   borderRadius: 10,
                   height: 50,
+                  flexDirection: 'row',
+                  gap: 10,
                 }}>
                 <Icon name="bars" color="#070A3C" size={16} />
+                <TextComp
+                  text="Filter"
+                  style={{
+                    color: '#000',
+                    fontWeight: '700',
+                  }}
+                />
               </TouchableOpacity>
 
               {animals.map(a => (
                 <TouchableOpacity onPress={() => setActiveCategory(a)}>
-                  <LinearGradient
-                    colors={
-                      activeCategory === a
-                        ? ['#80aceb', '#6ea1ee', '#5e96f0']
-                        : ['#f7f7f8', '#f7f7f9', '#f7f7ff']
-                    }
+                  <TouchableOpacity
                     style={{
                       alignItems: 'center',
                       justifyContent: 'center',
                       backgroundColor: '#f7f7f8',
-                      padding: 15,
+                      flexDirection: 'row',
+                      paddingHorizontal: 15,
+                      paddingVertical: 10,
                       borderRadius: 10,
                     }}>
+                    <View
+                      style={{
+                        width: 24,
+                        height: 24,
+                        padding: 5,
+                        backgroundColor: '#86958e',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        borderRadius: 30,
+                        overflow: 'hidden',
+                      }}>
+                      <Image
+                        source={a === 'Dog' ? images.homeDog : images.homeCat}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                        }}
+                      />
+                    </View>
                     <TextComp
                       text={a}
                       style={{
@@ -216,7 +169,7 @@ const Home = () => {
                         fontWeight: '500',
                       }}
                     />
-                  </LinearGradient>
+                  </TouchableOpacity>
                 </TouchableOpacity>
               ))}
             </View>

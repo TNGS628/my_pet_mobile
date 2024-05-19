@@ -24,24 +24,25 @@ const HomeCard = ({ isLiked = false }) => {
       style={{
         backgroundColor: '#fff',
         borderRadius: 15,
-        padding: 5,
+        // padding: 5,
         paddingBottom: 15,
         elevation: 1,
         shadowColor: 'black',
         shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 0.2,
         shadowRadius: 2,
+        overflow: 'hidden',
       }}>
       <View style={{ position: 'relative' }}>
         <Image
           // source={images.dog}
           source={{ uri: dogImageUrl }}
           style={{
-            height: 100,
+            height: 200,
             width: 150,
-            objectFit: 'contain',
+            objectFit: 'cover',
             backgroundColor: '#e7e8e7',
-            borderRadius: 15,
+            // borderRadius: 15,
             marginBottom: 10,
           }}></Image>
         <View
