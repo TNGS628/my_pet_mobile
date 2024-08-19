@@ -377,6 +377,9 @@ PODS:
   - React-jsinspector (0.72.4)
   - React-logger (0.72.4):
     - glog
+  - react-native-blur (4.4.0):
+    - RCT-Folly (= 2021.07.22.00)
+    - React-Core
   - react-native-pager-view (6.2.1):
     - React-Core
   - react-native-safe-area-context (4.7.2):
@@ -496,6 +499,8 @@ PODS:
   - RNScreens (3.25.0):
     - React-Core
     - React-RCTImage
+  - RNSVG (15.5.0):
+    - React-Core
   - RNVectorIcons (10.0.0):
     - React-Core
   - SocketRocket (0.6.1)
@@ -550,6 +555,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - "react-native-blur (from `../node_modules/@react-native-community/blur`)"
   - react-native-pager-view (from `../node_modules/react-native-pager-view`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
@@ -571,6 +577,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - RNSVG (from `../node_modules/react-native-svg`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -637,6 +644,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-blur:
+    :path: "../node_modules/@react-native-community/blur"
   react-native-pager-view:
     :path: "../node_modules/react-native-pager-view"
   react-native-safe-area-context:
@@ -679,6 +688,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-gesture-handler"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNSVG:
+    :path: "../node_modules/react-native-svg"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
   Yoga:
@@ -719,6 +730,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: c7f826e40fa9cab5d37cab6130b1af237332b594
   React-jsinspector: aaed4cf551c4a1c98092436518c2d267b13a673f
   React-logger: da1ebe05ae06eb6db4b162202faeafac4b435e77
+  react-native-blur: 69ecfe61d81b32ee7baae10f5d17aeb4e2594b10
   react-native-pager-view: d211379f61895b6349bd7e571b44a26d005c2975
   react-native-safe-area-context: 7aa8e6d9d0f3100a820efb1a98af68aa747f9284
   React-NativeModulesApple: edb5ace14f73f4969df6e7b1f3e41bef0012740f
@@ -740,6 +752,7 @@ SPEC CHECKSUMS:
   ReactCommon: 4b2bdcb50a3543e1c2b2849ad44533686610826d
   RNGestureHandler: 38aa38413896620338948fbb5c90579a7b1c3fde
   RNScreens: 85d3880b52d34db7b8eeebe2f1a0e807c05e69fa
+  RNSVG: 154cfbbd9d5388e70bf0410f4f6997938886cd1b
   RNVectorIcons: 8b5bb0fa61d54cd2020af4f24a51841ce365c7e9
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 3efc43e0d48686ce2e8c60f99d4e6bd349aff981
