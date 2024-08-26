@@ -11,10 +11,11 @@ import {
   Keyboard,
   TouchableWithoutFeedback,
 } from 'react-native';
-import { Button, Divider } from 'native-base';
+import { Button } from 'native-base';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { styles } from './styles';
 import images from 'src/theme/variables';
+import Calculator from 'src/utils/calculator';
 
 // import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 // import axios from 'axios';
@@ -31,25 +32,25 @@ const RegisterPage = ({ navigation }) => {
   const nameRef = useRef(null);
 
   const pressRegister = async () => {
-    // if (password && email && name) {
-    //   axios
-    //     .post(`${BACKEND_URL}/signup`, {
-    //       email,
-    //       password,
-    //       name,
-    //     })
-    //     .then(() => {
-    //       showToast('Successfully signed up!', '#5cb85c');
-    //       setTimeout(() => {
-    //         goToLogin();
-    //       }, 1500);
-    //     })
-    //     .catch(() => {
-    //       showToast('Something went wrong!', 'red');
-    //     });
-    // } else {
-    //   showToast('Please fill in all required fields', 'orange');
-    // }
+    if (password && email && name) {
+      axios
+        .post(`${BACKEND_URL}/signup`, {
+          email,
+          password,
+          name,
+        })
+        .then(() => {
+          showToast('Successfully signed up!', '#5cb85c');
+          setTimeout(() => {
+            goToLogin();
+          }, 1500);
+        })
+        .catch(() => {
+          showToast('Something went wrong!', 'red');
+        });
+    } else {
+      showToast('Please fill in all required fields', 'orange');
+    }
   };
 
   const handleTapOutside = () => {
@@ -65,27 +66,23 @@ const RegisterPage = ({ navigation }) => {
     setName('');
     navigation.navigate('LoginPage');
   };
+  
 
   return (
     <ScrollView style={{ backgroundColor: '#fff' }}>
       <TouchableWithoutFeedback onPress={handleTapOutside}>
         <View style={styles.authContainer}>
           <View
-            style={{
-              width: '100%',
-              height: 250,
-              paddingTop: 40,
-              marginBottom: 20,
-            }}>
+            style={styles.imageContainer}>
             <Image
-              source={images.splash}
-              style={{ width: '100%', height: '100%', borderRadius: 16 }}
+              source={images.petlogo}
+              style={ styles.loginImage}
             />
           </View>
           <View style={{ width: '100%', marginBottom: 25 }}>
             <Text
-              style={{ fontSize: 30, color: '#172B47', fontWeight: 'bold' }}>
-              Sign Up
+              style={{ fontSize: 30, color: '#172B47', fontWeight: 'bold', paddingTop: Calculator(45) }}>
+              Бүртгүүлэх
             </Text>
           </View>
 
@@ -103,11 +100,12 @@ const RegisterPage = ({ navigation }) => {
               style={{ marginRight: 10 }}
             />
             <View style={{ width: '100%', paddingRight: 30 }}>
+              <View style={styles.textInputBorder}>
               <TextInput
                 ref={emailRef}
                 value={email}
                 onChangeText={setEmail}
-                placeholder="Email ID"
+                placeholder="И-Мэйл хаяг"
                 placeholderTextColor={'#9EA3A8'}
                 autoCorrect={false}
                 autoCapitalize="none"
@@ -117,10 +115,9 @@ const RegisterPage = ({ navigation }) => {
                   fontWeight: '600',
                 }}
               />
-              <Divider />
+            </View>
             </View>
           </View>
-
           <View
             style={{
               display: 'flex',
@@ -135,11 +132,12 @@ const RegisterPage = ({ navigation }) => {
               style={{ marginRight: 10 }}
             />
             <View style={{ width: '100%', paddingRight: 30 }}>
+              <View style={styles.textInputBorder}>
               <TextInput
                 ref={nameRef}
                 value={name}
                 onChangeText={setName}
-                placeholder="Full name"
+                placeholder="Овог нэр"
                 placeholderTextColor={'#9EA3A8'}
                 autoCapitalize="none"
                 autoCorrect={false}
@@ -149,7 +147,7 @@ const RegisterPage = ({ navigation }) => {
                   fontWeight: '600',
                 }}
               />
-              <Divider />
+            </View>
             </View>
           </View>
 
@@ -167,11 +165,12 @@ const RegisterPage = ({ navigation }) => {
               style={{ marginRight: 10 }}
             />
             <View style={{ width: '100%', paddingRight: 30 }}>
+              <View style={styles.textInputBorder}>
               <TextInput
                 ref={passwordRef}
                 value={password}
                 onChangeText={setPassword}
-                placeholder="Password"
+                placeholder="Нууц үг"
                 secureTextEntry={true}
                 placeholderTextColor={'#9EA3A8'}
                 autoCapitalize="none"
@@ -181,11 +180,11 @@ const RegisterPage = ({ navigation }) => {
                   fontWeight: '600',
                 }}
               />
-              <Divider />
+            </View>
             </View>
           </View>
 
-          <View
+          <TouchableOpacity
             style={{
               display: 'flex',
               flexDirection: 'row',
@@ -193,18 +192,18 @@ const RegisterPage = ({ navigation }) => {
               marginBottom: 20,
             }}>
             <Text style={{ fontWeight: '500', color: '#9EA3A8', fontSize: 13 }}>
-              By signing up, you agree to our{' '}
+              Та бүртгүүлснээр бидний{' '}
             </Text>
-            <Text style={{ fontWeight: '500', color: '#305D99', fontSize: 13 }}>
-              Terms & Conditions{' '}
+            <Text style={styles.textStyle}>
+              Үйлчилгээний нөхцөл{' '}
             </Text>
             <Text style={{ fontWeight: '500', color: '#9EA3A8', fontSize: 13 }}>
-              and{' '}
+              болон{' '}
             </Text>
-            <Text style={{ fontWeight: '500', color: '#305D99', fontSize: 13 }}>
-              Privacy Policy
+            <Text style={styles.textStyle}>
+              Нууцлалын гэрээг зөвшөөрч байна.
             </Text>
-          </View>
+          </TouchableOpacity>
 
           <Button
             variant={'solid'}
@@ -212,7 +211,7 @@ const RegisterPage = ({ navigation }) => {
             padding={3.5}
             style={{ backgroundColor: '#086cfe' }}
             onPress={pressRegister}>
-            <Text style={{ color: '#fff', fontWeight: '600' }}>Continue</Text>
+            <Text style={{ color: '#fff', fontWeight: '600' }}>Үргэлжлүүлэх</Text>
           </Button>
 
           <View
@@ -224,10 +223,10 @@ const RegisterPage = ({ navigation }) => {
             }}>
             <Text
               style={{ marginRight: 5, color: '#9EA3A8', fontWeight: '500' }}>
-              Joined us before?
+              Бүртгэлтэй хаяг байгаа бол
             </Text>
             <TouchableOpacity onPress={goToLogin}>
-              <Text style={{ fontWeight: '600', color: '#305D99' }}>Login</Text>
+              <Text style={{ fontWeight: '600', color: '#305D99' }}>Нэвтрэх</Text>
             </TouchableOpacity>
           </View>
         </View>
