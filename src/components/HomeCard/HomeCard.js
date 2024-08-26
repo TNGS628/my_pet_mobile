@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { TextComp } from '@/components';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
-import images from 'src/theme/variables';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import Icon from 'react-native-vector-icons/Ionicons';
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const HomeCard = ({ isLiked = false }) => {
+const HomeCard = ({ gender = 0, onPress = () => {} }) => {
   const [dogImageUrl, setDogImageUrl] = useState('');
+  const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
     // Fetch a random dog image URL
@@ -22,8 +23,8 @@ const HomeCard = ({ isLiked = false }) => {
   return (
     <TouchableOpacity
       style={{
-        backgroundColor: '#fff',
-        borderRadius: 15,
+        backgroundColor: '#f0eff4',
+        borderRadius: 18,
         // padding: 5,
         paddingBottom: 15,
         elevation: 1,
@@ -32,37 +33,21 @@ const HomeCard = ({ isLiked = false }) => {
         shadowOpacity: 0.2,
         shadowRadius: 2,
         overflow: 'hidden',
-      }}>
+        width: '47%',
+      }}
+      onPress={onPress}>
       <View style={{ position: 'relative' }}>
         <Image
           // source={images.dog}
           source={{ uri: dogImageUrl }}
           style={{
-            height: 200,
-            width: 150,
+            height: 180,
+            width: '100%',
             objectFit: 'cover',
             backgroundColor: '#e7e8e7',
             // borderRadius: 15,
             marginBottom: 10,
           }}></Image>
-        <View
-          style={{
-            height: 20,
-            width: 20,
-            backgroundColor: 'red',
-            position: 'absolute',
-            top: 8,
-            right: 8,
-            borderRadius: 10,
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: isLiked ? '#b84847' : '#fff',
-          }}>
-          <Icon
-            color={isLiked ? '#fff' : '#b84847'}
-            solid={isLiked}
-            name="heart"></Icon>
-        </View>
       </View>
 
       <View
@@ -72,25 +57,45 @@ const HomeCard = ({ isLiked = false }) => {
           paddingHorizontal: 10,
         }}>
         <View>
+          <View
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: 8,
+              marginBottom: 5,
+            }}>
+            <TextComp
+              text="Coco"
+              style={{
+                color: '#000',
+                fontWeight: '700',
+                fontSize: 14,
+              }}
+            />
+
+            <MaterialIcon
+              name={gender === 0 ? 'gender-male' : 'gender-female'}
+              size={20}
+              color={gender === 0 ? '#76c9cf' : '#ce5adf'}
+            />
+          </View>
+
           <TextComp
-            text="George"
-            style={{ color: '#070A3C', fontWeight: '700', fontSize: 16 }}
+            text="Young | Border collie"
+            style={{ color: '#79797b', fontWeight: '500', fontSize: 12 }}
           />
-          <TextComp text="Dutch Pug" />
         </View>
-        <View
-          style={{
-            backgroundColor: '#f6eceb',
-            borderRadius: 10,
-            padding: 5,
-            paddingHorizontal: 10,
-            alignSelf: 'flex-end',
+        <TouchableOpacity
+          onPress={() => {
+            setIsLiked(!isLiked);
           }}>
-          <TextComp
-            text="2 YRS"
-            style={{ color: '#c97070', fontWeight: '700', fontSize: 12 }}
-          />
-        </View>
+          {isLiked ? (
+            <Icon name="heart" size={24} color="#6952c7"></Icon>
+          ) : (
+            <Icon name="heart-outline" size={24} color="#6952c7"></Icon>
+          )}
+        </TouchableOpacity>
       </View>
     </TouchableOpacity>
   );

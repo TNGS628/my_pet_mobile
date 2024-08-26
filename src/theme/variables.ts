@@ -22,6 +22,10 @@ const images = {
   google: require('./../assets/images/google.png'),
   homeDog: require('./../assets/images/home_dog.jpg'),
   homeCat: require('./../assets/images/home_cat.png'),
+  filterHome: require('./../assets/images/filter.png'),
+  filterHomeDog: require('./../assets/images/real_dog.png'),
+  filterHomeCat: require('./../assets/images/real_cat.png'),
+  husky: require('./../assets/images/husky.png'),
 };
 
 export default images;

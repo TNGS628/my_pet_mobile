@@ -13,7 +13,7 @@ const Tab = createBottomTabNavigator();
 
 const getTabBarVisible = (route: any) => {
   const routeName = getFocusedRouteNameFromRoute(route) || 'HomePage';
-  if (routeName !== 'HomePage' && routeName !== 'GuestMorePage') {
+  if (routeName !== 'HomePage' && routeName !== 'UserProfilePage') {
     return 'none';
   }
   return 'flex';
@@ -22,13 +22,13 @@ const getTabBarVisible = (route: any) => {
 export const TabHomeNavigator = () => {
   return (
     <Tab.Navigator
-      initialRouteName="GuestHome"
+      initialRouteName="HomeNavigator"
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarStyle: [
           {
             display: getTabBarVisible(route),
-            paddingBottom: 5,
+            // paddingBottom: 5,
           },
         ],
       })}>
@@ -38,7 +38,7 @@ export const TabHomeNavigator = () => {
         options={() => ({
           title: 'Нүүр',
           tabBarIcon: ({ color }) => (
-            <Icon name="home" size={Calculator(20)}color={color} />
+            <Icon name="home" size={Calculator(20)} color={color} />
           ),
         })}
       />

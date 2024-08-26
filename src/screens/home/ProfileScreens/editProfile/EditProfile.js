@@ -17,14 +17,15 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FIcon from 'react-native-vector-icons/Feather';
 import { Divider } from 'native-base';
+import { useNavigation } from '@react-navigation/native';
 
-const EditProfile = ({ navigation }) => {
-  const [first, setfirst] = useState();
+const EditProfile = () => {
+  const navigation = useNavigation();
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={{ position: 'relative' }}>
-        <View>
+        <View style={{ padding: 20 }}>
           <TouchableOpacity
             style={styles.iconCon}
             onPress={() => {
@@ -37,9 +38,9 @@ const EditProfile = ({ navigation }) => {
             <TextComp text="My Profile" style={styles.name} />
             <View style={styles.proImageCon}>
               <Image source={images.splash} style={styles.proImage} />
-              <View style={styles.imageIcon}>
+              <TouchableOpacity style={styles.imageIcon}>
                 <FIcon name="upload-cloud" size={20} color={'#fff'}></FIcon>
-              </View>
+              </TouchableOpacity>
             </View>
           </View>
 
