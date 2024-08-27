@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   authContainer: {
     flex: 1,
     flexGrow: 1,
-    padding: 20,
+    padding: Calculator(20),
     paddingTop: 0,
     justifyContent: 'center',
   },
@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     color: "grey"
   },
-  imageContainer: {
+  loginImageView: {
     width: '100%',
               height: 250,
               paddingTop: Calculator(40),
@@ -24,9 +24,7 @@ export const styles = StyleSheet.create({
     height: '100%', 
     borderRadius: 16, 
     marginTop: Calculator(50), 
-    marginBottom: Calculator(30),
-    borderRadius: Calculator(30)
-
+    marginBottom: Calculator(30)
   },
   textInputBorder: {
     color: 'black',
@@ -34,9 +32,6 @@ export const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     wdith: '100%',
-  },
-  textStyle: {
-    fontWeight: '500', color: '#305D99', fontSize: 13 
   }
   
 });

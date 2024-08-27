@@ -8,17 +8,17 @@ const ProfileStack = createStackNavigator();
 export const ProfileNavigator = () => {
   return (
     <ProfileStack.Navigator
-      initialRouteName="ProfilePage"
+      initialRouteName="UserProfilePage"
       screenOptions={{ headerShown: false }}>
       <ProfileStack.Screen
-        name="UserProfile"
+        name="UserProfilePage"
         component={UserProfile}
         options={{
           headerShown: false,
         }}
       />
       <ProfileStack.Screen
-        name="EditProfile"
+        name="EditProfilePage"
         component={EditProfile}
         options={{
           headerShown: false,

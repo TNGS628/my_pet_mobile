@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import {
   SafeAreaView,
-  useColorScheme,
   View,
   Image,
   TouchableOpacity,
-  Text,
   ScrollView,
 } from 'react-native';
-import { useTheme } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon6 from 'react-native-vector-icons/FontAwesome6';
 import { BlurView } from '@react-native-community/blur';
+import { useStore } from '../../../../context/app.provider';
+import { AppActionTypes } from 'src/context/types';
+import { APP_STACK } from 'src/navigation/screenTypes';
 
 //styles
 import styles from './styles.js';
@@ -22,11 +23,16 @@ import { TextComp } from '@/components';
 //images
 import images from '../../../../theme/variables';
 
-const UserProfile = ({ navigation }) => {
-  const { colors } = useTheme();
+const UserProfile = () => {
+  const navigation = useNavigation();
+  const { appDispatch } = useStore();
 
-  const isDarkMode = useColorScheme() === 'dark';
-  const [first, setfirst] = useState();
+  const onLogout = () => {
+    appDispatch({
+      type: AppActionTypes.SWITCH_STACK,
+      payload: APP_STACK.AUTH,
+    });
+  };
 
   const menuItems = [
     {
@@ -59,6 +65,12 @@ const UserProfile = ({ navigation }) => {
       bcolor: '#f2e1ef',
       color: '#d041a2',
     },
+    {
+      icon: 'right-to-bracket',
+      name: 'Log Out',
+      bcolor: '#e3242b',
+      color: '#fff',
+    },
   ];
 
   return (
@@ -66,10 +78,11 @@ const UserProfile = ({ navigation }) => {
       <ScrollView>
         <View
           style={{
-            backgroundColor: 'red',
+            // backgroundColor: 'red',
             width: '100%',
             height: '100%',
             flex: 1,
+            position: 'relative',
           }}>
           <View
             style={{
@@ -86,10 +99,14 @@ const UserProfile = ({ navigation }) => {
               <TouchableOpacity
                 style={styles.proImagCon}
                 onPress={() => {
-                  navigation.navigate('EditProfile');
+                  navigation.navigate('EditProfilePage');
                 }}>
                 <Image source={images.splash} style={styles.proImage} />
-                <TouchableOpacity style={styles.editButtonContainer}>
+                <TouchableOpacity
+                  style={styles.editButtonContainer}
+                  onPress={() => {
+                    navigation.navigate('EditProfilePage');
+                  }}>
                   <Icon
                     name="circle-edit-outline"
                     color="#fff"
@@ -114,6 +131,11 @@ const UserProfile = ({ navigation }) => {
                   justifyContent: 'space-between',
                   alignItems: 'center',
                   marginBottom: 15,
+                }}
+                onPress={() => {
+                  if (item.name === 'Log Out') {
+                    onLogout();
+                  }
                 }}>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                   <View
@@ -133,7 +155,9 @@ const UserProfile = ({ navigation }) => {
                   </View>
                   <TextComp text={item.name} style={styles.menuItem} />
                 </View>
-                <Icon6 name="chevron-right" size={18} color="#172B47"></Icon6>
+                {/* {item.name !== 'Log Out' && (
+                  <Icon6 name="chevron-right" size={18} color="#172B47"></Icon6>
+                )} */}
               </TouchableOpacity>
             ))}
           </View>

@@ -7,22 +7,23 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
-import { useTheme } from '@react-navigation/native';
+import { useTheme, useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import Feather from 'react-native-vector-icons/Feather';
 
 //components
 import styles from './styles.js';
 import { TextComp } from '@/components';
 import images from '../../../theme/variables';
-import LinearGradient from 'react-native-linear-gradient';
 import { HomeCard } from '@/components';
 
-const animals = ['Dog', 'Cat'];
+const animals = ['Dogs', 'Cats'];
 
 const Home = () => {
   const { colors } = useTheme();
+  const navigation = useNavigation();
 
-  const [activeCategory, setActiveCategory] = useState('Dog');
+  const [activeCategory, setActiveCategory] = useState('Dogs');
 
   const isDarkMode = useColorScheme() === 'dark';
   const [first, setfirst] = useState();
@@ -59,29 +60,29 @@ const Home = () => {
                 />
               </View>
             </View>
-            <View style={{ flexDirection: 'row', columnGap: 10 }}>
+            <View style={{ flexDirection: 'row', columnGap: 8 }}>
               <TouchableOpacity
                 style={{
-                  width: 35,
-                  height: 35,
+                  width: 40,
+                  height: 40,
                   backgroundColor: '#f7f7f8',
-                  borderRadius: 7,
+                  borderRadius: 20,
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}>
-                <Icon name="search" color="#070A3C" size={20} />
+                <Feather name="search" color="#070A3C" size={24} />
               </TouchableOpacity>
 
               <TouchableOpacity
                 style={{
-                  width: 35,
-                  height: 35,
+                  width: 40,
+                  height: 40,
                   backgroundColor: '#f7f7f8',
-                  borderRadius: 7,
+                  borderRadius: 20,
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}>
-                <Icon name="bell" color="#070A3C" size={20} />
+                <Feather name="bell" color="#070A3C" size={24} />
               </TouchableOpacity>
             </View>
           </View>
@@ -99,6 +100,7 @@ const Home = () => {
                 color: '#070A3C',
                 fontWeight: '700',
                 marginVertical: 25,
+                marginBottom: 15,
               }}
             />
           </View>
@@ -112,82 +114,87 @@ const Home = () => {
                 style={{
                   alignItems: 'center',
                   justifyContent: 'center',
-                  backgroundColor: '#f7f7f8',
-                  padding: 15,
-                  borderRadius: 10,
-                  height: 50,
+                  backgroundColor: '#f2effb',
+                  paddingHorizontal: 15,
+                  borderRadius: 20,
+                  height: 45,
                   flexDirection: 'row',
                   gap: 10,
                 }}>
-                <Icon name="bars" color="#070A3C" size={16} />
+                <Image
+                  source={images.filterHome}
+                  style={{
+                    width: 24,
+                    height: 24,
+                    objectFit: 'cover',
+                  }}
+                />
+
                 <TextComp
                   text="Filter"
                   style={{
                     color: '#000',
-                    fontWeight: '700',
+                    fontWeight: '600',
                   }}
                 />
               </TouchableOpacity>
 
               {animals.map(a => (
-                <TouchableOpacity onPress={() => setActiveCategory(a)}>
-                  <TouchableOpacity
+                <TouchableOpacity
+                  onPress={() => setActiveCategory(a)}
+                  style={{
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backgroundColor:
+                      a === activeCategory ? '#d2cbed' : '#f2effb',
+                    paddingHorizontal: 15,
+                    borderRadius: 20,
+                    height: 45,
+                    flexDirection: 'row',
+                    gap: 10,
+                  }}>
+                  <Image
+                    source={
+                      a === 'Dogs' ? images.filterHomeDog : images.filterHomeCat
+                    }
                     style={{
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      backgroundColor: '#f7f7f8',
-                      flexDirection: 'row',
-                      paddingHorizontal: 15,
-                      paddingVertical: 10,
-                      borderRadius: 10,
-                    }}>
-                    <View
-                      style={{
-                        width: 24,
-                        height: 24,
-                        padding: 5,
-                        backgroundColor: '#86958e',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        borderRadius: 30,
-                        overflow: 'hidden',
-                      }}>
-                      <Image
-                        source={a === 'Dog' ? images.homeDog : images.homeCat}
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                        }}
-                      />
-                    </View>
-                    <TextComp
-                      text={a}
-                      style={{
-                        color: activeCategory === a ? '#fff' : '#070A3C',
-                        fontWeight: '500',
-                      }}
-                    />
-                  </TouchableOpacity>
+                      width: 24,
+                      height: 24,
+                      objectFit: 'cover',
+                    }}
+                  />
+
+                  <TextComp
+                    text={a}
+                    style={{
+                      color: '#000',
+                      fontWeight: '600',
+                    }}
+                  />
                 </TouchableOpacity>
               ))}
             </View>
           </ScrollView>
 
-          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            <View
-              style={{
-                flexDirection: 'row',
-                columnGap: 10,
-                marginVertical: 10,
-                paddingHorizontal: 2,
-              }}>
-              {[0, 1, 2, 3].map(i => (
-                <HomeCard isLiked={i === 0 || i === 2} />
-              ))}
-            </View>
-          </ScrollView>
+          {/* <ScrollView horizontal showsHorizontalScrollIndicator={false}> */}
+          <View
+            style={{
+              flexDirection: 'row',
+              flexWrap: 'wrap',
+              gap: 20,
+              marginVertical: 10,
+              justifyContent: 'space-between',
+            }}>
+            {[0, 1, 1, 2, 2, 4, 5, 4].map(i => (
+              <HomeCard
+                gender={i % 2}
+                onPress={() => {
+                  navigation.navigate('PetDetailPage');
+                }}
+              />
+            ))}
+          </View>
+          {/* </ScrollView> */}
         </ScrollView>
       </View>
     </SafeAreaView>
