@@ -13,7 +13,6 @@ import {
 import { Button, Divider } from 'native-base';
 import { styles } from './styles';
 
-import { UseGlobalStyles } from '../../../theme';
 import images from 'src/theme/variables';
 import { useStore } from '../../../context/app.provider';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -60,7 +59,7 @@ const Login = ({ navigation }) => {
       type: AppActionTypes.SWITCH_STACK,
       payload: APP_STACK.HOME,
     });
-  }
+  };
 
   const handleTapOutside = () => {
     Keyboard.dismiss();
@@ -72,16 +71,17 @@ const Login = ({ navigation }) => {
     <ScrollView style={{ backgroundColor: '#fff' }}>
       <TouchableWithoutFeedback onPress={handleTapOutside}>
         <View style={styles.authContainer}>
-          <View
-            style={styles.loginImageView}>
-            <Image
-              source={images.splash}
-              style={styles.loginImage}
-            />
+          <View style={styles.loginImageView}>
+            <Image source={images.splash} style={styles.loginImage} />
           </View>
           <View style={{ width: '100%', marginBottom: 25 }}>
             <Text
-              style={{ fontSize: 30, color: '#172B47', fontWeight: 'bold', paddingTop: Calculator(60) }}>
+              style={{
+                fontSize: 30,
+                color: '#172B47',
+                fontWeight: 'bold',
+                paddingTop: Calculator(60),
+              }}>
               Нэвтрэх
             </Text>
           </View>
@@ -97,26 +97,25 @@ const Login = ({ navigation }) => {
               name="alternate-email"
               color={'#9EA3A8'}
               size={20}
-              style={{ marginRight: 10, alignSelf: 'flexStart' }}
+              style={{ marginRight: 10 }}
             />
             <View style={{ width: '100%', paddingRight: 30 }}>
-            <View style={styles.textInputBorder}>
-
-              <TextInput
-                ref={emailRef}
-                value={email}
-                onChangeText={setEmail}
-                placeholder="И-Мэйл хаяг"
-                placeholderTextColor={'#9EA3A8'}
-                autoCorrect={false}
-                autoCapitalize="none"
-                style={{
-                  borderTopWidth: 0,
-                  color: '#9EA3A8',
-                  fontWeight: '600'
-                }}
-              />
-            </View>
+              <View style={styles.textInputBorder}>
+                <TextInput
+                  ref={emailRef}
+                  value={email}
+                  onChangeText={setEmail}
+                  placeholder="И-Мэйл хаяг"
+                  placeholderTextColor={'#9EA3A8'}
+                  autoCorrect={false}
+                  autoCapitalize="none"
+                  style={{
+                    borderTopWidth: 0,
+                    color: '#9EA3A8',
+                    fontWeight: '600',
+                  }}
+                />
+              </View>
             </View>
           </View>
 
@@ -131,7 +130,7 @@ const Login = ({ navigation }) => {
               name="lock-outline"
               color={'#9EA3A8'}
               size={20}
-              style={{ marginRight: 10, alignSelf: 'flexStart' }}
+              style={{ marginRight: 10 }}
             />
             <View style={{ width: '100%', paddingRight: 30 }}>
               <View style={styles.textInputBorder}>
@@ -162,9 +161,8 @@ const Login = ({ navigation }) => {
               flexDirection: 'row',
               marginBottom: 20,
             }}>
-            <TouchableOpacity 
+            <TouchableOpacity
               onPress={() => {
-
                 setEmail('');
                 navigation.navigate('ForgotPasswordPage');
               }}>
@@ -183,11 +181,8 @@ const Login = ({ navigation }) => {
             <Text style={{ color: '#fff', fontWeight: '600' }}>Нэвтрэх</Text>
           </Button>
 
-          <View
-            style={styles.dividerStyle}>
-            <View
-              style={{ width: '45%', height: 0.3, backgroundColor: 'grey' }}
-            />
+          <View style={styles.dividerStyle}>
+            <View style={{ flex: 1, height: 0.3, backgroundColor: 'grey' }} />
             <Text
               style={{
                 color: '#9EA3A8',
@@ -196,9 +191,7 @@ const Login = ({ navigation }) => {
               }}>
               Эсвэл
             </Text>
-            <View
-              style={{ width: '45%', height: 0.3, backgroundColor: 'grey' }}
-            />
+            <View style={{ flex: 1, height: 0.3, backgroundColor: 'grey' }} />
           </View>
 
           <Button
@@ -207,12 +200,8 @@ const Login = ({ navigation }) => {
             padding={3.5}
             style={{ backgroundColor: '#F7FBFC', marginBottom: 20 }}
             onPress={pressLogin}>
-            <View
-              style={styles.googleButton}>
-              <Image
-                source={images.google}
-                style={styles.googleImg}
-              />
+            <View style={styles.googleButton}>
+              <Image source={images.google} style={styles.googleImg} />
               <Text style={{ color: '#858FA1', fontWeight: '600' }}>
                 Google хаягаар нэвтрэх
               </Text>
@@ -235,9 +224,7 @@ const Login = ({ navigation }) => {
                 setPassword('');
                 navigation.navigate('RegisterPage');
               }}>
-              <Text style={{ fontWeight: '600', color: '#305D99' }}>
-                нээх
-              </Text>
+              <Text style={{ fontWeight: '600', color: '#305D99' }}>нээх</Text>
             </TouchableOpacity>
           </View>
         </View>

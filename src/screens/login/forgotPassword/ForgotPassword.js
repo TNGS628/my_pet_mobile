@@ -65,16 +65,17 @@ const ForgotPassword = ({ navigation }) => {
     <ScrollView style={{ backgroundColor: '#fff' }}>
       <TouchableWithoutFeedback onPress={handleTapOutside}>
         <View style={styles.authContainer}>
-          <View
-            style={styles.loginImageView}>
-            <Image
-              source={images.splash}
-              style={styles.loginImage}
-            />
+          <View style={styles.loginImageView}>
+            <Image source={images.splash} style={styles.loginImage} />
           </View>
           <View style={{ width: '100%', marginBottom: 25 }}>
             <Text
-              style={{ fontSize: 30, color: '#172B47', fontWeight: 'bold', paddingTop: Calculator(60) }}>
+              style={{
+                fontSize: 30,
+                color: '#172B47',
+                fontWeight: 'bold',
+                paddingTop: Calculator(60),
+              }}>
               Нууц үг мартсан
             </Text>
           </View>
@@ -90,26 +91,25 @@ const ForgotPassword = ({ navigation }) => {
               name="alternate-email"
               color={'#9EA3A8'}
               size={20}
-              style={{ marginRight: 10, alignSelf: 'flexStart' }}
+              style={{ marginRight: 10 }}
             />
             <View style={{ width: '100%', paddingRight: 30 }}>
-            <View style={styles.textInputBorder}>
-
-              <TextInput
-                ref={emailRef}
-                value={email}
-                onChangeText={setEmail}
-                placeholder="И-Мэйл хаяг"
-                placeholderTextColor={'#9EA3A8'}
-                autoCorrect={false}
-                autoCapitalize="none"
-                style={{
-                  borderTopWidth: 0,
-                  color: '#9EA3A8',
-                  fontWeight: '600'
-                }}
-              />
-            </View>
+              <View style={styles.textInputBorder}>
+                <TextInput
+                  ref={emailRef}
+                  value={email}
+                  onChangeText={setEmail}
+                  placeholder="И-Мэйл хаяг"
+                  placeholderTextColor={'#9EA3A8'}
+                  autoCorrect={false}
+                  autoCapitalize="none"
+                  style={{
+                    borderTopWidth: 0,
+                    color: '#9EA3A8',
+                    fontWeight: '600',
+                  }}
+                />
+              </View>
             </View>
           </View>
           <Button
@@ -118,11 +118,13 @@ const ForgotPassword = ({ navigation }) => {
             padding={3.5}
             style={{ backgroundColor: '#086cfe' }}
             onPress={() => {
-                navigation.navigate('LoginPage')
+              navigation.navigate('LoginPage');
             }}>
-            <Text style={{ color: '#fff', fontWeight: '600' }}>Үргэлжлүүлэх</Text>
+            <Text style={{ color: '#fff', fontWeight: '600' }}>
+              Үргэлжлүүлэх
+            </Text>
           </Button>
-          <Divider />
+          {/* <Divider /> */}
           <Button
             variant={'solid'}
             borderRadius={10}

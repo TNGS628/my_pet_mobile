@@ -10,6 +10,9 @@ import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon6 from 'react-native-vector-icons/FontAwesome6';
 import { BlurView } from '@react-native-community/blur';
+import { useStore } from '../../../../context/app.provider';
+import { AppActionTypes } from 'src/context/types';
+import { APP_STACK } from 'src/navigation/screenTypes';
 
 //styles
 import styles from './styles.js';
@@ -22,6 +25,14 @@ import images from '../../../../theme/variables';
 
 const UserProfile = () => {
   const navigation = useNavigation();
+  const { appDispatch } = useStore();
+
+  const onLogout = () => {
+    appDispatch({
+      type: AppActionTypes.SWITCH_STACK,
+      payload: APP_STACK.AUTH,
+    });
+  };
 
   const menuItems = [
     {
@@ -120,6 +131,11 @@ const UserProfile = () => {
                   justifyContent: 'space-between',
                   alignItems: 'center',
                   marginBottom: 15,
+                }}
+                onPress={() => {
+                  if (item.name === 'Log Out') {
+                    onLogout();
+                  }
                 }}>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                   <View

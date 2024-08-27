@@ -26,6 +26,7 @@ const images = {
   filterHomeDog: require('./../assets/images/real_dog.png'),
   filterHomeCat: require('./../assets/images/real_cat.png'),
   husky: require('./../assets/images/husky.png'),
+  petlogo: require('./../assets/images/petlogo.png'),
 };
 
 export default images;
